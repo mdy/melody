@@ -1,0 +1,3 @@
+[submodule "resolver/testdata"]
+	path = resolver/testdata
+	url = https://github.com/CocoaPods/Resolver-Integration-Specs

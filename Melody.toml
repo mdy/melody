@@ -1,0 +1,15 @@
+[project]
+name="github.com/melody-sh/melody"
+authors=["team@melody.sh"]
+version="0.1.0"
+
+[dependencies]
+"github.com/Sirupsen/logrus"="head"
+"github.com/urfave/cli"="^1.0.0"
+"github.com/BurntSushi/toml"="head"
+"github.com/gonum/graph"="head"
+"github.com/gonum/graph/simple"="head"
+"github.com/dustin/go-humanize"="head"
+"golang.org/x/sync/errgroup"="head"
+"github.com/pkg/errors"="head"
+"gopkg.in/check.v1"="head"
