@@ -10,6 +10,8 @@ Melody is a tool that enables Go developers to manage project's dependencies and
 
 **Cloud-assisted repository indexing and caching** allows for much faster and more-reliable builds.  [melodyAPI][melody-api] integration makes sure your build is fast, and that a deleted repository or tag does not break future builds.
 
+> Please note that the [melodyAPI][melody-api] cloud cache may be cold during the beta period due to a low traffic.  This may cause slowness during your installs, but it will get faster as our userbase grows.
+
 ## Installing Melody
 
 Binary builds are available in the [Releases][releases] section of Melody GitHub repo.  For the latest unstable version, you can also [build from source](#building-from-source).
@@ -58,6 +60,10 @@ When you specify dependencies in `Melody.toml`, you can restrict to a range or a
 - `"#sha"` will install a specific revision of the repo
 - You can also use ranges similar to [npm-semver](https://github.com/npm/node-semver#ranges)
 - TODO: Expand SemVer range docs here
+
+### Importing local dependencies
+
+If you would like to import a package from another local repository, unfortunately at this time Melody cannot help you. Instead, we suggest temporarily removing that dependency from your `Melody.toml` and `vendor` subdirectory, and letting Go toolchain reference that local dependency via GOPATH.  Once you've pushed the local changes to the origin server, you can return to vendoring that dependency via Melody.
 
 ## Contribution and Improvements
 
