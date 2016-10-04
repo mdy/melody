@@ -1,5 +1,6 @@
-LDFLAGS=-ldflags "-X 'main.version=`git describe --tags` (`date -u +%Y-%m-%d\ %H:%M:%S`)'"
-PACKAGES=$(shell go list ./... | grep -v /vendor/)
+VERSION=$(patsubst v%,%,$(shell git describe --tags))
+LDFLAGS=-ldflags "-X 'main.version=$(VERSION) ($(shell date -u +%Y-%m-%d\ %H:%M:%S))'"
+GOXFLAGS=-output "build/{{.Dir}}_$(VERSION)_{{.OS}}_{{.Arch}}"
 default: build
 
 describe:
@@ -9,4 +10,7 @@ build:
 	@go build $(LDFLAGS) -v .
 
 test:
-	@go test $(LDFLAGS) $(PACKAGES)
+	@go test $(LDFLAGS) $(shell go list ./... | grep -v /vendor/)
+
+release:
+	@gox $(LDFLAGS) $(GOXFLAGS) .
