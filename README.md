@@ -69,7 +69,7 @@ If you would like to import a package from another local repository, unfortunate
 
 We encourage you to contribute to Melody! The current iteration of Melody is just a preview of what it could be.  We would like to add the following in the near future:
 
-- `init` command to initialize a project with a basic `Melody.toml`
+- <s>`init` command to initialize a project with a basic `Melody.toml`</s>
 - `lint` command to validate configuration and dependencies
 - Skip "Resolving" step for `install` with an existing lockfile.
 - Support for `[test-dependencies]` group in `Melody.toml`
@@ -93,7 +93,7 @@ $ make build
 Once you have all the requirements to build Melody, you can run the tests after populating the test data:
 
 ```bash
-$ git submodule update --init --recursive
+$ make install
 $ make test
 ```
 

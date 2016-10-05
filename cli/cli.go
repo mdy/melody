@@ -58,6 +58,10 @@ func Main(version string) {
 var (
 	commands = []cli.Command{
 		{
+			Name:   "init",
+			Usage:  "Start a project",
+			Action: initProject,
+		}, {
 			Name:      "install",
 			ShortName: "i",
 			Usage:     "Install dependencies",

@@ -14,3 +14,7 @@ test:
 
 release:
 	@gox $(LDFLAGS) $(GOXFLAGS) .
+
+install:
+	git submodule update --init --recursive
+	go get github.com/jteeuwen/go-bindata/...

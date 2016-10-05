@@ -28,10 +28,10 @@ type Project struct {
 }
 
 type Config struct {
-	Name         string
-	Version      string
-	Authors      []string
-	Dependencies map[string]string
+	Name         string            `toml:"name"`
+	Version      string            `toml:"version"`
+	Authors      []string          `toml:"authors"`
+	Dependencies map[string]string `toml:"dependencies,omitempty"`
 }
 
 type Locked struct {

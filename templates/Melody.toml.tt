@@ -1,0 +1,18 @@
+# Basic details about this repository.
+
+[project]
+{{toml .}}
+
+# Dependencies section lists the packages that are required to build your project.
+# Melody uses this information to compute and install all downstream dependencies.
+# The keys in this section are the package names and values are version restrictions.
+# You can use a specific tagged version, SHA revision, or a version range to narrow
+# down what is compatible with your project:
+# https://github.com/melody-sh/melody#specifying-dependency-restrictions
+#
+# Please note that dependencies are package names as specified in your import
+# statements, NOT repository paths.  Although a repository path may exist, you
+# will see an error if the root package cannot be imported.
+
+[dependencies]
+# "github.com/pkg/errors" = "^0.8.0"
