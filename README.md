@@ -12,6 +12,8 @@ Melody is a tool that enables Go developers to manage project's dependencies and
 
 > Please note that the [melodyAPI][melody-api] cloud cache may be cold during the beta period due to a low traffic.  This may cause slowness during your installs, but it will get faster as our userbase grows.
 
+Melody requires Go 1.6+. Although it may work with GO15VENDOREXPERIMENT flag, Go 1.5 is not supported.
+
 ## Installing Melody
 
 Binary builds are available in the [Releases][releases] section of Melody GitHub repo.  For the latest unstable version, you can also [build from source](#building-from-source).
@@ -120,9 +122,15 @@ Aside from the dependencies specified in the `Melody.toml` file that make Melody
 - [Cargo](http://doc.crates.io) - Rust dependency manager
 - [Composer](https://getcomposer.org) - PHP dependency manager
 
+Melody was started as an internal project at [Gemfury](https://gemfury.com), and the company will continue to sponsor its maintenance and future development.
+
 ## Questions
 
 Please use the [tag "melody" on StackOverflow][questions] or [file a Github Issue][issues] if you have any other questions or problems.
+
+## License
+
+Melody is Copyright © 2016 Michael Rykov. See LICENSE file for terms of use and redistribution.
 
 [questions]: http://stackoverflow.com/questions/ask?tags=melody
 [releases]: https://github.com/melody-sh/melody/releases
