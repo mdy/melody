@@ -21,8 +21,8 @@ func initProject(c *cli.Context) error {
 		log.Fatalf("`init` command takes at most one argument. See '%s init --help'.", c.App.Name)
 	}
 
-	// No arguments will return a blank path which becomes current working dir
-	projectDir, err := filepath.Abs(c.Args().Get(0))
+	// No arguments will return a blank path which uses current dir
+	projectDir, err := mkdirForProject(c.Args().Get(0))
 	if err != nil {
 		return err
 	}
@@ -64,10 +64,45 @@ func tomlTemplateFunc(v interface{}) (string, error) {
 	return strings.TrimSpace(buff.String()), err
 }
 
+// Figure out best possible project directory from argument
+func mkdirForProject(name string) (string, error) {
+	dir, err := filepath.Abs(name)
+	if err != nil {
+		return "", err
+	}
+
+	// If named directory exists as is, let's use that
+	if stat, err := os.Stat(dir); err == nil && stat.IsDir() {
+		return dir, nil
+	}
+
+	// If it looks like an ImportPath, let's put it under $GOPATH/src
+	name = filepath.Clean(name)
+	if gopath := os.Getenv("GOPATH"); gopath != "" && isPossibleImportPath(name) {
+		dir = filepath.Join(filepath.SplitList(gopath)[0], "src", name)
+	}
+
+	// Maybe the user meant that we should create the directory too
+	if err := os.MkdirAll(dir, 0755); err != nil && !os.IsExist(err) {
+		return "", err
+	}
+
+	return dir, nil
+}
+
 // TODO: Move this to project package w/ all things config
 func initProjectConfig(dir string) (*project.Config, error) {
 	pkg, err := build.Default.ImportDir(dir, build.FindOnly)
 	config := &project.Config{Version: "0.1.0"}
 	config.Name = pkg.ImportPath
 	return config, err
+}
+
+// TODO: Move this to project package w/ all things config
+func isPossibleImportPath(path string) bool {
+	i := strings.Index(path, "/")
+	if i < 0 {
+		i = len(path)
+	}
+	return strings.Contains(path[:i], ".")
 }
