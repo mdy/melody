@@ -44,6 +44,16 @@ Also, you can peek at available updates without making any changes:
 
 That's it, for now.  Subsequent building and testing can be done via standard Go toolchain.
 
+## Project layout
+
+Melody integrates with the standard $GOPATH layout that you've been using, you just need to add `Melody.{toml|lock}` files at the root of your project:
+
+    $GOPATH/src/path/to/project
+    ├── Melody.lock
+    ├── Melody.toml
+    ├── main.go
+    └── ...
+
 ### Melody.toml
 
 Both configuration and lockfile are in [TOML][toml] configuration format.  Please take a look at [`Melody.toml`][example-config] for this repository for an example with inline documentation on how to get started.
@@ -73,6 +83,7 @@ We encourage you to contribute to Melody! The current iteration of Melody is jus
 
 - <s>`init` command to initialize a project with a basic `Melody.toml`</s>
 - <s>`lint` command to validate configuration and dependencies</s>
+- `init` should be smarter about creating projects in $GOPATH/src
 - Auto-extract and validate dependencies in `init` and `lint`
 - Skip "Resolving" step for `install` with an existing lockfile.
 - Support for `[test-dependencies]` group in `Melody.toml`
