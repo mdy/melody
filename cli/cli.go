@@ -81,6 +81,10 @@ var (
 			Usage:  "Validate configuration",
 			Action: lint,
 		}, {
+			Name:   "list",
+			Usage:  "List all dependencies",
+			Action: list,
+		}, {
 			Name:   "info",
 			Usage:  "Show project info",
 			Action: info,
