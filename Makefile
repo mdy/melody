@@ -1,6 +1,6 @@
 VERSION=$(patsubst v%,%,$(shell git describe --tags))
 LDFLAGS=-ldflags "-X 'main.version=$(VERSION) ($(shell date -u +%Y-%m-%d\ %H:%M:%S))'"
-GOXFLAGS=-output "build/{{.Dir}}_$(VERSION)_{{.OS}}_{{.Arch}}"
+GOXFLAGS=-output "build/{{.Dir}}_$(VERSION)_{{.OS}}_{{.Arch}}" -os "darwin linux windows" -arch "386 amd64 arm"
 default: build
 
 describe:
