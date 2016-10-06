@@ -77,6 +77,10 @@ var (
 			Usage:     "Show outdated dependencies",
 			Action:    outdated,
 		}, {
+			Name:   "lint",
+			Usage:  "Validate configuration",
+			Action: lint,
+		}, {
 			Name:   "info",
 			Usage:  "Show project info",
 			Action: info,

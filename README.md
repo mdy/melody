@@ -72,7 +72,8 @@ If you would like to import a package from another local repository, unfortunate
 We encourage you to contribute to Melody! The current iteration of Melody is just a preview of what it could be.  We would like to add the following in the near future:
 
 - <s>`init` command to initialize a project with a basic `Melody.toml`</s>
-- `lint` command to validate configuration and dependencies
+- <s>`lint` command to validate configuration and dependencies</s>
+- Auto-extract and validate dependencies in `init` and `lint`
 - Skip "Resolving" step for `install` with an existing lockfile.
 - Support for `[test-dependencies]` group in `Melody.toml`
 - Batch GraphQL queries for package info from melodyAPI
