@@ -14,6 +14,9 @@ func outdated(c *cli.Context) error {
 	wDir, _ := os.Getwd()
 	project, err := project.Load(wDir)
 	log.Info("Project", project, " -- ", err)
+	if err != nil {
+		return err
+	}
 
 	// Load or resolve current specs
 	source := provider.NewMelody(project.Locked)

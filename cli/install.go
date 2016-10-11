@@ -16,6 +16,9 @@ func install(c *cli.Context) error {
 	wDir, _ := os.Getwd()
 	project, err := project.Load(wDir)
 	log.Info("Project", project, " -- ", err)
+	if err != nil {
+		return err
+	}
 
 	// Convert Project.Config to Requested
 	source := provider.NewMelody(project.Locked)
