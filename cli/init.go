@@ -5,11 +5,10 @@ import (
 	"fmt"
 	"github.com/BurntSushi/toml"
 	log "github.com/Sirupsen/logrus"
-	"github.com/melodysh/melody/project"
+	"github.com/melodysh/melody/internal/extract"
 	"github.com/melodysh/melody/templates"
 	"github.com/pkg/errors"
 	"github.com/urfave/cli"
-	"go/build"
 	"os"
 	"path/filepath"
 	"strings"
@@ -44,7 +43,7 @@ func initProject(c *cli.Context) error {
 		return errors.Wrap(err, "Internal error")
 	}
 
-	config, err := initProjectConfig(projectDir)
+	config, err := extract.ProjectConfig(projectDir)
 	if err != nil {
 		return err
 	}
@@ -88,14 +87,6 @@ func mkdirForProject(name string) (string, error) {
 	}
 
 	return dir, nil
-}
-
-// TODO: Move this to project package w/ all things config
-func initProjectConfig(dir string) (*project.Config, error) {
-	pkg, err := build.Default.ImportDir(dir, build.FindOnly)
-	config := &project.Config{Version: "0.1.0"}
-	config.Name = pkg.ImportPath
-	return config, err
 }
 
 // TODO: Move this to project package w/ all things config

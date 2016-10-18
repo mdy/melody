@@ -83,8 +83,8 @@ We encourage you to contribute to Melody! The current iteration of Melody is jus
 
 - <s>`init` command to initialize a project with a basic `Melody.toml`</s>
 - <s>`lint` command to validate configuration and dependencies</s>
-- `init` should be smarter about creating projects in $GOPATH/src
-- Auto-extract and validate dependencies in `init` and `lint`
+- <s>`init` should be smarter about creating projects in $GOPATH/src</s>
+- <s>Auto-extract and validate dependencies in `init` and `lint`</s>
 - Skip "Resolving" step for `install` with an existing lockfile.
 - Support for `[test-dependencies]` group in `Melody.toml`
 - Batch GraphQL queries for package info from melodyAPI

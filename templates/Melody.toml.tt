@@ -1,7 +1,8 @@
 # Basic details about this repository.
 
 [project]
-{{toml .}}
+name = "{{ .Name }}"
+version = "{{ .Version }}"
 
 # Dependencies section lists the packages that are required to build your project.
 # Melody uses this information to compute and install all downstream dependencies.
@@ -15,4 +16,6 @@
 # will see an error if the root package cannot be imported.
 
 [dependencies]
+{{ if .Dependencies }}{{ toml .Dependencies }}{{ else }}
 # "github.com/pkg/errors" = "^0.8.0"
+{{ end }}

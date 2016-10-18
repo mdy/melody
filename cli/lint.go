@@ -3,6 +3,7 @@ package cli
 import (
 	"fmt"
 	log "github.com/Sirupsen/logrus"
+	"github.com/melodysh/melody/internal/extract"
 	"github.com/melodysh/melody/project"
 	//	"github.com/pkg/errors"
 	"github.com/urfave/cli"
@@ -38,13 +39,19 @@ func lint(c *cli.Context) error {
 		return fmt.Errorf(" Error reading Melody.toml: %s", err)
 	}
 
-	initConfig, err := initProjectConfig(projectDir)
+	initConfig, err := extract.ProjectConfig(projectDir)
 	if err != nil {
 		return err
 	}
 
 	if a, e := proj.Config.Name, initConfig.Name; a != e {
 		fmt.Printf("  Name is \"%s\", should be \"%s\"\n", a, e)
+	}
+
+	for d, _ := range initConfig.Dependencies {
+		if _, ok := proj.Config.Dependencies[d]; !ok {
+			fmt.Printf("  Imported package \"%s\" should be a dependency\n", d)
+		}
 	}
 
 	return nil
