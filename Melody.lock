@@ -2,7 +2,7 @@
 _lockFormatVersion = "0.1.0"
 
 [project]
-  name = "github.com/melody-sh/melody"
+  name = "github.com/melodysh/melody"
   version = "0.1.0"
   dependencies = [
     "github.com/BurntSushi/toml 0.2.1-head.20+m99064174e013895bbd9b025c31100bd1d9b590ca",

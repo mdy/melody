@@ -1,7 +1,7 @@
 package resolver
 
 import (
-	"github.com/melody-sh/melody/resolver/types"
+	"github.com/melodysh/melody/resolver/types"
 	"time"
 )
 

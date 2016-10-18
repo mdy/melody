@@ -3,7 +3,7 @@ package melody
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/melody-sh/melody/resolver/types"
+	"github.com/melodysh/melody/resolver/types"
 	"github.com/pkg/errors"
 	"io/ioutil"
 	"net/http"

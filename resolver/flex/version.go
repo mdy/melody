@@ -2,7 +2,7 @@ package flex
 
 import (
 	"bytes"
-	"github.com/melody-sh/melody/version"
+	"github.com/melodysh/melody/version"
 	"strconv"
 	"strings"
 	tscanner "text/scanner"

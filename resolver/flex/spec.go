@@ -2,8 +2,8 @@ package flex
 
 import (
 	"fmt"
-	"github.com/melody-sh/melody/resolver/types"
-	"github.com/melody-sh/melody/version"
+	"github.com/melodysh/melody/resolver/types"
+	"github.com/melodysh/melody/version"
 )
 
 func NewSpec(n, v string) *Specification {

@@ -3,7 +3,7 @@ package resolver
 import (
 	"github.com/gonum/graph"
 	"github.com/gonum/graph/simple"
-	"github.com/melody-sh/melody/resolver/types"
+	"github.com/melodysh/melody/resolver/types"
 	"sort"
 	"strings"
 )

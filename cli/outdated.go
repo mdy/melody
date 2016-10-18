@@ -3,8 +3,8 @@ package cli
 import (
 	"fmt"
 	log "github.com/Sirupsen/logrus"
-	"github.com/melody-sh/melody/project"
-	"github.com/melody-sh/melody/provider"
+	"github.com/melodysh/melody/project"
+	"github.com/melodysh/melody/provider"
 	"github.com/urfave/cli"
 	"os"
 	"strings"

@@ -1,8 +1,8 @@
 package resolver
 
 import (
-	"github.com/melody-sh/melody/resolver/flex"
-	"github.com/melody-sh/melody/resolver/types"
+	"github.com/melodysh/melody/resolver/flex"
+	"github.com/melodysh/melody/resolver/types"
 	c "gopkg.in/check.v1"
 )
 

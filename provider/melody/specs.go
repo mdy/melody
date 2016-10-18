@@ -3,9 +3,9 @@ package melody
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/melody-sh/melody/resolver"
-	"github.com/melody-sh/melody/resolver/flex"
-	"github.com/melody-sh/melody/resolver/types"
+	"github.com/melodysh/melody/resolver"
+	"github.com/melodysh/melody/resolver/flex"
+	"github.com/melodysh/melody/resolver/types"
 	"strings"
 )
 
