@@ -10,7 +10,7 @@ build:
 	@go build $(LDFLAGS) -v .
 
 test:
-	@go test $(LDFLAGS) $(shell go list ./... | grep -v /vendor/)
+	@go test -race $(LDFLAGS) $(shell go list ./... | grep -v /vendor/)
 
 release:
 	@gox $(LDFLAGS) $(GOXFLAGS) .
@@ -18,3 +18,8 @@ release:
 install:
 	git submodule update --init --recursive
 	go get github.com/jteeuwen/go-bindata/...
+
+melody-install:
+	go get -u github.com/melodysh/melody
+	go install github.com/melodysh/melody
+	melody install
