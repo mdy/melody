@@ -6,11 +6,11 @@ _lockFormatVersion = "0.1.0"
   version = "0.1.0"
   dependencies = [
     "github.com/BurntSushi/toml 0.2.1-head.20+m99064174e013895bbd9b025c31100bd1d9b590ca",
-    "github.com/Sirupsen/logrus 0.10.1-head.37+m3ec0642a7fb6488f65b06f9040adc67e3990296a",
+    "github.com/Sirupsen/logrus 0.10.1-head.45+m380f64d344b252a007a59baa61f31820f59cba89",
     "github.com/dustin/go-humanize 0.1.0-head.101+mbd88f87ad3a420f7bcf05e90566fd1ceb351fa7f",
-    "github.com/gonum/graph 0.1.0-head.669+me9b5d8007b3701436c1d3ea5e2cb83a1ba6303a4",
-    "github.com/gonum/graph/simple 0.1.0-head.669+me9b5d8007b3701436c1d3ea5e2cb83a1ba6303a4",
-    "github.com/pkg/errors 0.8.1-head.1+m839d9e913e063e28dfd0e6c7b7512793e0a48be9",
+    "github.com/gonum/graph 0.1.0-head.671+m310a92d978bfef671734001aa9ecabf25052afd8",
+    "github.com/gonum/graph/simple 0.1.0-head.671+m310a92d978bfef671734001aa9ecabf25052afd8",
+    "github.com/pkg/errors 0.8.1-head.2+m248dadf4e9068a0b3e79f02ed0a610d935de5302",
     "github.com/urfave/cli 1.18.1",
     "golang.org/x/sync/errgroup 0.1.0-head.6+m1ae7c7b29e06598039be46c5083819ba6fd7a97e",
     "gopkg.in/check.v1 0.1.0-head.151+m4f90aeace3a26ad7021961c297b22c42160c7b25"
@@ -23,8 +23,8 @@ _lockFormatVersion = "0.1.0"
 
 [[packages]]
   name = "github.com/Sirupsen/logrus"
-  version = "0.10.1-head.37+m3ec0642a7fb6488f65b06f9040adc67e3990296a"
-  release = "github.com/Sirupsen/logrus#3ec0642a7fb6488f65b06f9040adc67e3990296a"
+  version = "0.10.1-head.45+m380f64d344b252a007a59baa61f31820f59cba89"
+  release = "github.com/Sirupsen/logrus#380f64d344b252a007a59baa61f31820f59cba89"
 
 [[packages]]
   name = "github.com/dustin/go-humanize"
@@ -33,128 +33,128 @@ _lockFormatVersion = "0.1.0"
 
 [[packages]]
   name = "github.com/gonum/blas"
-  version = "0.1.0-head.548+mc0f965528ba923bdc4539184111aef2353c8384e"
-  release = "github.com/gonum/blas#c0f965528ba923bdc4539184111aef2353c8384e"
+  version = "0.1.0-head.550+mae153b67db9bc5e765798776fb211c9777cd3cc0"
+  release = "github.com/gonum/blas#ae153b67db9bc5e765798776fb211c9777cd3cc0"
 
 [[packages]]
   name = "github.com/gonum/blas/blas64"
-  version = "0.1.0-head.548+mc0f965528ba923bdc4539184111aef2353c8384e"
-  release = "github.com/gonum/blas#c0f965528ba923bdc4539184111aef2353c8384e"
+  version = "0.1.0-head.550+mae153b67db9bc5e765798776fb211c9777cd3cc0"
+  release = "github.com/gonum/blas#ae153b67db9bc5e765798776fb211c9777cd3cc0"
   dependencies = [
-    "github.com/gonum/blas 0.1.0-head.548+mc0f965528ba923bdc4539184111aef2353c8384e",
-    "github.com/gonum/blas/native 0.1.0-head.548+mc0f965528ba923bdc4539184111aef2353c8384e"
+    "github.com/gonum/blas 0.1.0-head.550+mae153b67db9bc5e765798776fb211c9777cd3cc0",
+    "github.com/gonum/blas/native 0.1.0-head.550+mae153b67db9bc5e765798776fb211c9777cd3cc0"
   ]
 
 [[packages]]
   name = "github.com/gonum/blas/native"
-  version = "0.1.0-head.548+mc0f965528ba923bdc4539184111aef2353c8384e"
-  release = "github.com/gonum/blas#c0f965528ba923bdc4539184111aef2353c8384e"
+  version = "0.1.0-head.550+mae153b67db9bc5e765798776fb211c9777cd3cc0"
+  release = "github.com/gonum/blas#ae153b67db9bc5e765798776fb211c9777cd3cc0"
   dependencies = [
-    "github.com/gonum/blas 0.1.0-head.548+mc0f965528ba923bdc4539184111aef2353c8384e",
-    "github.com/gonum/blas/native/internal/math32 0.1.0-head.548+mc0f965528ba923bdc4539184111aef2353c8384e",
-    "github.com/gonum/internal/asm 0.1.0-head.93+m4fdbdc0d9e4bbc74b86995c4903b16bb203b69ac"
+    "github.com/gonum/blas 0.1.0-head.550+mae153b67db9bc5e765798776fb211c9777cd3cc0",
+    "github.com/gonum/blas/native/internal/math32 0.1.0-head.550+mae153b67db9bc5e765798776fb211c9777cd3cc0",
+    "github.com/gonum/internal/asm 0.1.0-head.95+mbd2e27558441c2cc983b90fbf8a462b39e65e240"
   ]
 
 [[packages]]
   name = "github.com/gonum/blas/native/internal/math32"
-  version = "0.1.0-head.548+mc0f965528ba923bdc4539184111aef2353c8384e"
-  release = "github.com/gonum/blas#c0f965528ba923bdc4539184111aef2353c8384e"
+  version = "0.1.0-head.550+mae153b67db9bc5e765798776fb211c9777cd3cc0"
+  release = "github.com/gonum/blas#ae153b67db9bc5e765798776fb211c9777cd3cc0"
 
 [[packages]]
   name = "github.com/gonum/floats"
-  version = "0.1.0-head.261+me7dfbda930c8a40d6d1ba9107762aae3e6e47591"
-  release = "github.com/gonum/floats#e7dfbda930c8a40d6d1ba9107762aae3e6e47591"
+  version = "0.1.0-head.263+m69e84bedb455b879a901c5b8f45f5c99db9e3267"
+  release = "github.com/gonum/floats#69e84bedb455b879a901c5b8f45f5c99db9e3267"
   dependencies = [
-    "github.com/gonum/internal/asm 0.1.0-head.93+m4fdbdc0d9e4bbc74b86995c4903b16bb203b69ac"
+    "github.com/gonum/internal/asm 0.1.0-head.95+mbd2e27558441c2cc983b90fbf8a462b39e65e240"
   ]
 
 [[packages]]
   name = "github.com/gonum/graph"
-  version = "0.1.0-head.669+me9b5d8007b3701436c1d3ea5e2cb83a1ba6303a4"
-  release = "github.com/gonum/graph#e9b5d8007b3701436c1d3ea5e2cb83a1ba6303a4"
+  version = "0.1.0-head.671+m310a92d978bfef671734001aa9ecabf25052afd8"
+  release = "github.com/gonum/graph#310a92d978bfef671734001aa9ecabf25052afd8"
   dependencies = [
-    "golang.org/x/tools/container/intsets 0.1.0-head.1961+m69f6f5b782e1f090edb33f68be67d96673a8059e"
+    "golang.org/x/tools/container/intsets 0.1.0-head.1984+mc3ce94f8a8ae358bf8a34048ae5ff6ff466389a4"
   ]
 
 [[packages]]
   name = "github.com/gonum/graph/internal/ordered"
-  version = "0.1.0-head.669+me9b5d8007b3701436c1d3ea5e2cb83a1ba6303a4"
-  release = "github.com/gonum/graph#e9b5d8007b3701436c1d3ea5e2cb83a1ba6303a4"
+  version = "0.1.0-head.671+m310a92d978bfef671734001aa9ecabf25052afd8"
+  release = "github.com/gonum/graph#310a92d978bfef671734001aa9ecabf25052afd8"
   dependencies = [
-    "github.com/gonum/graph 0.1.0-head.669+me9b5d8007b3701436c1d3ea5e2cb83a1ba6303a4"
+    "github.com/gonum/graph 0.1.0-head.671+m310a92d978bfef671734001aa9ecabf25052afd8"
   ]
 
 [[packages]]
   name = "github.com/gonum/graph/simple"
-  version = "0.1.0-head.669+me9b5d8007b3701436c1d3ea5e2cb83a1ba6303a4"
-  release = "github.com/gonum/graph#e9b5d8007b3701436c1d3ea5e2cb83a1ba6303a4"
+  version = "0.1.0-head.671+m310a92d978bfef671734001aa9ecabf25052afd8"
+  release = "github.com/gonum/graph#310a92d978bfef671734001aa9ecabf25052afd8"
   dependencies = [
-    "github.com/gonum/graph 0.1.0-head.669+me9b5d8007b3701436c1d3ea5e2cb83a1ba6303a4",
-    "github.com/gonum/graph/internal/ordered 0.1.0-head.669+me9b5d8007b3701436c1d3ea5e2cb83a1ba6303a4",
-    "github.com/gonum/matrix/mat64 0.1.0-head.695+mfc954b943756a9eb688d47a7115b0a4dfe90355f",
-    "golang.org/x/tools/container/intsets 0.1.0-head.1961+m69f6f5b782e1f090edb33f68be67d96673a8059e"
+    "github.com/gonum/graph 0.1.0-head.671+m310a92d978bfef671734001aa9ecabf25052afd8",
+    "github.com/gonum/graph/internal/ordered 0.1.0-head.671+m310a92d978bfef671734001aa9ecabf25052afd8",
+    "github.com/gonum/matrix/mat64 0.1.0-head.697+mdbfe3ea464ecb7c5f04b9d1c042185ce9ed9fac1",
+    "golang.org/x/tools/container/intsets 0.1.0-head.1984+mc3ce94f8a8ae358bf8a34048ae5ff6ff466389a4"
   ]
 
 [[packages]]
   name = "github.com/gonum/internal/asm"
-  version = "0.1.0-head.93+m4fdbdc0d9e4bbc74b86995c4903b16bb203b69ac"
-  release = "github.com/gonum/internal#4fdbdc0d9e4bbc74b86995c4903b16bb203b69ac"
+  version = "0.1.0-head.95+mbd2e27558441c2cc983b90fbf8a462b39e65e240"
+  release = "github.com/gonum/internal#bd2e27558441c2cc983b90fbf8a462b39e65e240"
 
 [[packages]]
   name = "github.com/gonum/lapack"
-  version = "0.1.0-head.496+m6ed120fae94a24b58e5896174e6841d7a7628cfa"
-  release = "github.com/gonum/lapack#6ed120fae94a24b58e5896174e6841d7a7628cfa"
+  version = "0.1.0-head.508+me6bca281bc473f8b458e1f67612a25b45e73cb4b"
+  release = "github.com/gonum/lapack#e6bca281bc473f8b458e1f67612a25b45e73cb4b"
   dependencies = [
-    "github.com/gonum/blas 0.1.0-head.548+mc0f965528ba923bdc4539184111aef2353c8384e"
+    "github.com/gonum/blas 0.1.0-head.550+mae153b67db9bc5e765798776fb211c9777cd3cc0"
   ]
 
 [[packages]]
   name = "github.com/gonum/lapack/lapack64"
-  version = "0.1.0-head.496+m6ed120fae94a24b58e5896174e6841d7a7628cfa"
-  release = "github.com/gonum/lapack#6ed120fae94a24b58e5896174e6841d7a7628cfa"
+  version = "0.1.0-head.508+me6bca281bc473f8b458e1f67612a25b45e73cb4b"
+  release = "github.com/gonum/lapack#e6bca281bc473f8b458e1f67612a25b45e73cb4b"
   dependencies = [
-    "github.com/gonum/blas 0.1.0-head.548+mc0f965528ba923bdc4539184111aef2353c8384e",
-    "github.com/gonum/blas/blas64 0.1.0-head.548+mc0f965528ba923bdc4539184111aef2353c8384e",
-    "github.com/gonum/lapack 0.1.0-head.496+m6ed120fae94a24b58e5896174e6841d7a7628cfa",
-    "github.com/gonum/lapack/native 0.1.0-head.496+m6ed120fae94a24b58e5896174e6841d7a7628cfa"
+    "github.com/gonum/blas 0.1.0-head.550+mae153b67db9bc5e765798776fb211c9777cd3cc0",
+    "github.com/gonum/blas/blas64 0.1.0-head.550+mae153b67db9bc5e765798776fb211c9777cd3cc0",
+    "github.com/gonum/lapack 0.1.0-head.508+me6bca281bc473f8b458e1f67612a25b45e73cb4b",
+    "github.com/gonum/lapack/native 0.1.0-head.508+me6bca281bc473f8b458e1f67612a25b45e73cb4b"
   ]
 
 [[packages]]
   name = "github.com/gonum/lapack/native"
-  version = "0.1.0-head.496+m6ed120fae94a24b58e5896174e6841d7a7628cfa"
-  release = "github.com/gonum/lapack#6ed120fae94a24b58e5896174e6841d7a7628cfa"
+  version = "0.1.0-head.508+me6bca281bc473f8b458e1f67612a25b45e73cb4b"
+  release = "github.com/gonum/lapack#e6bca281bc473f8b458e1f67612a25b45e73cb4b"
   dependencies = [
-    "github.com/gonum/blas 0.1.0-head.548+mc0f965528ba923bdc4539184111aef2353c8384e",
-    "github.com/gonum/blas/blas64 0.1.0-head.548+mc0f965528ba923bdc4539184111aef2353c8384e",
-    "github.com/gonum/lapack 0.1.0-head.496+m6ed120fae94a24b58e5896174e6841d7a7628cfa"
+    "github.com/gonum/blas 0.1.0-head.550+mae153b67db9bc5e765798776fb211c9777cd3cc0",
+    "github.com/gonum/blas/blas64 0.1.0-head.550+mae153b67db9bc5e765798776fb211c9777cd3cc0",
+    "github.com/gonum/lapack 0.1.0-head.508+me6bca281bc473f8b458e1f67612a25b45e73cb4b"
   ]
 
 [[packages]]
   name = "github.com/gonum/matrix"
-  version = "0.1.0-head.695+mfc954b943756a9eb688d47a7115b0a4dfe90355f"
-  release = "github.com/gonum/matrix#fc954b943756a9eb688d47a7115b0a4dfe90355f"
+  version = "0.1.0-head.697+mdbfe3ea464ecb7c5f04b9d1c042185ce9ed9fac1"
+  release = "github.com/gonum/matrix#dbfe3ea464ecb7c5f04b9d1c042185ce9ed9fac1"
   dependencies = [
-    "github.com/gonum/lapack 0.1.0-head.496+m6ed120fae94a24b58e5896174e6841d7a7628cfa"
+    "github.com/gonum/lapack 0.1.0-head.508+me6bca281bc473f8b458e1f67612a25b45e73cb4b"
   ]
 
 [[packages]]
   name = "github.com/gonum/matrix/mat64"
-  version = "0.1.0-head.695+mfc954b943756a9eb688d47a7115b0a4dfe90355f"
-  release = "github.com/gonum/matrix#fc954b943756a9eb688d47a7115b0a4dfe90355f"
+  version = "0.1.0-head.697+mdbfe3ea464ecb7c5f04b9d1c042185ce9ed9fac1"
+  release = "github.com/gonum/matrix#dbfe3ea464ecb7c5f04b9d1c042185ce9ed9fac1"
   dependencies = [
-    "github.com/gonum/blas 0.1.0-head.548+mc0f965528ba923bdc4539184111aef2353c8384e",
-    "github.com/gonum/blas/blas64 0.1.0-head.548+mc0f965528ba923bdc4539184111aef2353c8384e",
-    "github.com/gonum/floats 0.1.0-head.261+me7dfbda930c8a40d6d1ba9107762aae3e6e47591",
-    "github.com/gonum/internal/asm 0.1.0-head.93+m4fdbdc0d9e4bbc74b86995c4903b16bb203b69ac",
-    "github.com/gonum/lapack 0.1.0-head.496+m6ed120fae94a24b58e5896174e6841d7a7628cfa",
-    "github.com/gonum/lapack/lapack64 0.1.0-head.496+m6ed120fae94a24b58e5896174e6841d7a7628cfa",
-    "github.com/gonum/matrix 0.1.0-head.695+mfc954b943756a9eb688d47a7115b0a4dfe90355f"
+    "github.com/gonum/blas 0.1.0-head.550+mae153b67db9bc5e765798776fb211c9777cd3cc0",
+    "github.com/gonum/blas/blas64 0.1.0-head.550+mae153b67db9bc5e765798776fb211c9777cd3cc0",
+    "github.com/gonum/floats 0.1.0-head.263+m69e84bedb455b879a901c5b8f45f5c99db9e3267",
+    "github.com/gonum/internal/asm 0.1.0-head.95+mbd2e27558441c2cc983b90fbf8a462b39e65e240",
+    "github.com/gonum/lapack 0.1.0-head.508+me6bca281bc473f8b458e1f67612a25b45e73cb4b",
+    "github.com/gonum/lapack/lapack64 0.1.0-head.508+me6bca281bc473f8b458e1f67612a25b45e73cb4b",
+    "github.com/gonum/matrix 0.1.0-head.697+mdbfe3ea464ecb7c5f04b9d1c042185ce9ed9fac1"
   ]
 
 [[packages]]
   name = "github.com/pkg/errors"
-  version = "0.8.1-head.1+m839d9e913e063e28dfd0e6c7b7512793e0a48be9"
-  release = "github.com/pkg/errors#839d9e913e063e28dfd0e6c7b7512793e0a48be9"
+  version = "0.8.1-head.2+m248dadf4e9068a0b3e79f02ed0a610d935de5302"
+  release = "github.com/pkg/errors#248dadf4e9068a0b3e79f02ed0a610d935de5302"
 
 [[packages]]
   name = "github.com/urfave/cli"
@@ -163,21 +163,21 @@ _lockFormatVersion = "0.1.0"
 
 [[packages]]
   name = "golang.org/x/net/context"
-  version = "0.1.0-head.1005+m8b4af36cd21a1f85a7484b49feb7c79363106d8e"
-  release = "golang.org/x/net#8b4af36cd21a1f85a7484b49feb7c79363106d8e"
+  version = "0.1.0-head.1032+m569280fa63be4e201b975e5411e30a92178f0118"
+  release = "golang.org/x/net#569280fa63be4e201b975e5411e30a92178f0118"
 
 [[packages]]
   name = "golang.org/x/sync/errgroup"
   version = "0.1.0-head.6+m1ae7c7b29e06598039be46c5083819ba6fd7a97e"
   release = "golang.org/x/sync#1ae7c7b29e06598039be46c5083819ba6fd7a97e"
   dependencies = [
-    "golang.org/x/net/context 0.1.0-head.1005+m8b4af36cd21a1f85a7484b49feb7c79363106d8e"
+    "golang.org/x/net/context 0.1.0-head.1032+m569280fa63be4e201b975e5411e30a92178f0118"
   ]
 
 [[packages]]
   name = "golang.org/x/tools/container/intsets"
-  version = "0.1.0-head.1961+m69f6f5b782e1f090edb33f68be67d96673a8059e"
-  release = "golang.org/x/tools#69f6f5b782e1f090edb33f68be67d96673a8059e"
+  version = "0.1.0-head.1984+mc3ce94f8a8ae358bf8a34048ae5ff6ff466389a4"
+  release = "golang.org/x/tools#c3ce94f8a8ae358bf8a34048ae5ff6ff466389a4"
 
 [[packages]]
   name = "gopkg.in/check.v1"

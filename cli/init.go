@@ -21,12 +21,16 @@ func initProject(c *cli.Context) error {
 	}
 
 	// No arguments will return a blank path which uses current dir
-	projectDir, err := mkdirForProject(c.Args().Get(0))
+	return initProjectByName(c.Args().Get(0))
+}
+
+func initProjectByName(name string) error {
+	projectDir, err := mkdirForProject(name)
 	if err != nil {
 		return err
 	}
 
-	fmt.Printf("♫ Writing new Melody.toml to %s\n", projectDir)
+	fmt.Printf("♫ Writing Melody.toml to %s\n", projectDir)
 	configPath := filepath.Join(projectDir, "Melody.toml")
 	if _, err := os.Stat(configPath); err == nil {
 		return fmt.Errorf("Melody.toml already exists")

@@ -85,6 +85,20 @@ var (
 			Usage:  "List all dependencies",
 			Action: list,
 		}, {
+			Name:   "get",
+			Usage:  "Download and install a package",
+			Action: getPackages,
+			Flags: []cli.Flag{
+				cli.BoolFlag{
+					Name:  "d",
+					Usage: "Download only",
+				},
+				cli.BoolFlag{
+					Name:  "u",
+					Usage: "Force update",
+				},
+			},
+		}, {
 			Name:   "info",
 			Usage:  "Show project info",
 			Action: info,
