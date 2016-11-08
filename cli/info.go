@@ -2,7 +2,7 @@ package cli
 
 import (
 	log "github.com/Sirupsen/logrus"
-	"github.com/melodysh/melody/project"
+	"github.com/mdy/melody/project"
 	"github.com/urfave/cli"
 	"os"
 	"strings"

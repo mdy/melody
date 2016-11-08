@@ -2,7 +2,7 @@ package resolver
 
 import (
 	"fmt"
-	"github.com/melodysh/melody/resolver/types"
+	"github.com/mdy/melody/resolver/types"
 )
 
 // Resolver error to indicate a circular dependency

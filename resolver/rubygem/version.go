@@ -1,8 +1,8 @@
 package rubygem
 
 import (
-	"github.com/melodysh/melody/resolver/flex"
-	"github.com/melodysh/melody/version"
+	"github.com/mdy/melody/resolver/flex"
+	"github.com/mdy/melody/version"
 	"strings"
 )
 

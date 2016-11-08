@@ -2,8 +2,8 @@ package cli
 
 import (
 	log "github.com/Sirupsen/logrus"
-	"github.com/melodysh/melody/project"
-	"github.com/melodysh/melody/provider"
+	"github.com/mdy/melody/project"
+	"github.com/mdy/melody/provider"
 	"github.com/urfave/cli"
 	"os"
 )

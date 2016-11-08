@@ -3,9 +3,9 @@ package cli
 import (
 	"fmt"
 	log "github.com/Sirupsen/logrus"
-	"github.com/melodysh/melody/project"
-	"github.com/melodysh/melody/provider"
-	"github.com/melodysh/melody/resolver/types"
+	"github.com/mdy/melody/project"
+	"github.com/mdy/melody/provider"
+	"github.com/mdy/melody/resolver/types"
 	"github.com/urfave/cli"
 	"os"
 )

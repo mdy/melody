@@ -20,6 +20,6 @@ install:
 	go get github.com/jteeuwen/go-bindata/...
 
 melody-install:
-	go get -u github.com/melodysh/melody
-	go install github.com/melodysh/melody
+	go get -u github.com/mdy/melody
+	go install github.com/mdy/melody
 	melody install

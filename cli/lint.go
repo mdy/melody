@@ -3,8 +3,8 @@ package cli
 import (
 	"fmt"
 	log "github.com/Sirupsen/logrus"
-	"github.com/melodysh/melody/internal/extract"
-	"github.com/melodysh/melody/project"
+	"github.com/mdy/melody/internal/extract"
+	"github.com/mdy/melody/project"
 	//	"github.com/pkg/errors"
 	"github.com/urfave/cli"
 	"go/build"

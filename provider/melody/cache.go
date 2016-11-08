@@ -1,9 +1,9 @@
 package melody
 
 import (
-	"github.com/melodysh/melody/resolver"
-	"github.com/melodysh/melody/resolver/flex"
-	"github.com/melodysh/melody/resolver/types"
+	"github.com/mdy/melody/resolver"
+	"github.com/mdy/melody/resolver/flex"
+	"github.com/mdy/melody/resolver/types"
 )
 
 // External function used to fetch available specifications

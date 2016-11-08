@@ -1,8 +1,8 @@
 package version_test
 
 import (
-	"github.com/melodysh/melody/resolver/flex"
-	"github.com/melodysh/melody/version"
+	"github.com/mdy/melody/resolver/flex"
+	"github.com/mdy/melody/version"
 	"testing"
 )
 

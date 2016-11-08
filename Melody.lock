@@ -2,11 +2,11 @@
 _lockFormatVersion = "0.1.0"
 
 [project]
-  name = "github.com/melodysh/melody"
+  name = "github.com/mdy/melody"
   version = "0.1.0"
   dependencies = [
     "github.com/BurntSushi/toml 0.2.1-head.20+m99064174e013895bbd9b025c31100bd1d9b590ca",
-    "github.com/Sirupsen/logrus 0.10.1-head.45+m380f64d344b252a007a59baa61f31820f59cba89",
+    "github.com/Sirupsen/logrus 0.11.0",
     "github.com/dustin/go-humanize 0.1.0-head.101+mbd88f87ad3a420f7bcf05e90566fd1ceb351fa7f",
     "github.com/gonum/graph 0.1.0-head.671+m310a92d978bfef671734001aa9ecabf25052afd8",
     "github.com/gonum/graph/simple 0.1.0-head.671+m310a92d978bfef671734001aa9ecabf25052afd8",
@@ -23,8 +23,8 @@ _lockFormatVersion = "0.1.0"
 
 [[packages]]
   name = "github.com/Sirupsen/logrus"
-  version = "0.10.1-head.45+m380f64d344b252a007a59baa61f31820f59cba89"
-  release = "github.com/Sirupsen/logrus#380f64d344b252a007a59baa61f31820f59cba89"
+  version = "0.11.0"
+  release = "github.com/Sirupsen/logrus#d26492970760ca5d33129d2d799e34be5c4782eb"
 
 [[packages]]
   name = "github.com/dustin/go-humanize"
@@ -73,7 +73,7 @@ _lockFormatVersion = "0.1.0"
   version = "0.1.0-head.671+m310a92d978bfef671734001aa9ecabf25052afd8"
   release = "github.com/gonum/graph#310a92d978bfef671734001aa9ecabf25052afd8"
   dependencies = [
-    "golang.org/x/tools/container/intsets 0.1.0-head.1984+mc3ce94f8a8ae358bf8a34048ae5ff6ff466389a4"
+    "golang.org/x/tools/container/intsets 0.1.0-head.2005+m09079c88dc57ba9f9c46c4864af014a9e536f1b4"
   ]
 
 [[packages]]
@@ -92,7 +92,7 @@ _lockFormatVersion = "0.1.0"
     "github.com/gonum/graph 0.1.0-head.671+m310a92d978bfef671734001aa9ecabf25052afd8",
     "github.com/gonum/graph/internal/ordered 0.1.0-head.671+m310a92d978bfef671734001aa9ecabf25052afd8",
     "github.com/gonum/matrix/mat64 0.1.0-head.697+mdbfe3ea464ecb7c5f04b9d1c042185ce9ed9fac1",
-    "golang.org/x/tools/container/intsets 0.1.0-head.1984+mc3ce94f8a8ae358bf8a34048ae5ff6ff466389a4"
+    "golang.org/x/tools/container/intsets 0.1.0-head.2005+m09079c88dc57ba9f9c46c4864af014a9e536f1b4"
   ]
 
 [[packages]]
@@ -163,21 +163,21 @@ _lockFormatVersion = "0.1.0"
 
 [[packages]]
   name = "golang.org/x/net/context"
-  version = "0.1.0-head.1032+m569280fa63be4e201b975e5411e30a92178f0118"
-  release = "golang.org/x/net#569280fa63be4e201b975e5411e30a92178f0118"
+  version = "0.1.0-head.1036+m87635b2611e4683a6f0aa595c36683021a00b2e4"
+  release = "golang.org/x/net#87635b2611e4683a6f0aa595c36683021a00b2e4"
 
 [[packages]]
   name = "golang.org/x/sync/errgroup"
   version = "0.1.0-head.6+m1ae7c7b29e06598039be46c5083819ba6fd7a97e"
   release = "golang.org/x/sync#1ae7c7b29e06598039be46c5083819ba6fd7a97e"
   dependencies = [
-    "golang.org/x/net/context 0.1.0-head.1032+m569280fa63be4e201b975e5411e30a92178f0118"
+    "golang.org/x/net/context 0.1.0-head.1036+m87635b2611e4683a6f0aa595c36683021a00b2e4"
   ]
 
 [[packages]]
   name = "golang.org/x/tools/container/intsets"
-  version = "0.1.0-head.1984+mc3ce94f8a8ae358bf8a34048ae5ff6ff466389a4"
-  release = "golang.org/x/tools#c3ce94f8a8ae358bf8a34048ae5ff6ff466389a4"
+  version = "0.1.0-head.2005+m09079c88dc57ba9f9c46c4864af014a9e536f1b4"
+  release = "golang.org/x/tools#09079c88dc57ba9f9c46c4864af014a9e536f1b4"
 
 [[packages]]
   name = "gopkg.in/check.v1"

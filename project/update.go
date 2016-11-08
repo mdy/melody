@@ -2,9 +2,9 @@ package project
 
 import (
 	log "github.com/Sirupsen/logrus"
-	"github.com/melodysh/melody/provider"
-	"github.com/melodysh/melody/resolver"
-	"github.com/melodysh/melody/resolver/types"
+	"github.com/mdy/melody/provider"
+	"github.com/mdy/melody/resolver"
+	"github.com/mdy/melody/resolver/types"
 	"os"
 	"path/filepath"
 )

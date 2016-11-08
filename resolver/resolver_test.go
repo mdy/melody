@@ -2,8 +2,8 @@ package resolver
 
 import (
 	"encoding/json"
-	"github.com/melodysh/melody/resolver/rubygem"
-	"github.com/melodysh/melody/resolver/types"
+	"github.com/mdy/melody/resolver/rubygem"
+	"github.com/mdy/melody/resolver/types"
 	c "gopkg.in/check.v1"
 	"io/ioutil"
 	"sort"

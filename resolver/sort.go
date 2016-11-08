@@ -1,8 +1,8 @@
 package resolver
 
 import (
-	"github.com/melodysh/melody/resolver/types"
-	"github.com/melodysh/melody/version"
+	"github.com/mdy/melody/resolver/types"
+	"github.com/mdy/melody/version"
 	"sort"
 )
 

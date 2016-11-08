@@ -1,9 +1,9 @@
 package provider
 
 import (
-	"github.com/melodysh/melody/provider/melody"
-	"github.com/melodysh/melody/resolver"
-	"github.com/melodysh/melody/resolver/types"
+	"github.com/mdy/melody/provider/melody"
+	"github.com/mdy/melody/resolver"
+	"github.com/mdy/melody/resolver/types"
 )
 
 type Provider interface {

@@ -3,8 +3,8 @@ package project
 import (
 	"bytes"
 	"github.com/BurntSushi/toml"
-	"github.com/melodysh/melody/provider/melody"
-	"github.com/melodysh/melody/resolver"
+	"github.com/mdy/melody/provider/melody"
+	"github.com/mdy/melody/resolver"
 	"io/ioutil"
 	"regexp"
 	"strings"

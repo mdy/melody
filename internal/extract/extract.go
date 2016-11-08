@@ -1,7 +1,7 @@
 package extract
 
 import (
-	"github.com/melodysh/melody/project"
+	"github.com/mdy/melody/project"
 	"go/build"
 	"os"
 	"path/filepath"

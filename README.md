@@ -97,7 +97,7 @@ We encourage you to contribute to Melody! The current iteration of Melody is jus
 Although you can use `go get` to install Melody, we, of course, recommend using Melody to prepare the project: 
 
 ```bash
-$ git clone https://github.com/melodysh/melody.git
+$ git clone https://github.com/mdy/melody.git
 $ cd melody; melody install
 $ make build
 ```
@@ -145,9 +145,9 @@ Please use the [tag "melody" on StackOverflow][questions] or [file a Github Issu
 Melody is Copyright © 2016 Michael Rykov. See LICENSE file for terms of use and redistribution.
 
 [questions]: http://stackoverflow.com/questions/ask?tags=melody
-[releases]: https://github.com/melodysh/melody/releases
-[issues]: https://github.com/melodysh/melody/issues
-[example-config]: https://github.com/melodysh/melody/blob/master/Melody.toml
+[releases]: https://github.com/mdy/melody/releases
+[issues]: https://github.com/mdy/melody/issues
+[example-config]: https://github.com/mdy/melody/blob/master/Melody.toml
 [toml]: https://github.com/toml-lang/toml
 [melody-api]: https://melody.sh/api/
 [semver]: http://semver.org

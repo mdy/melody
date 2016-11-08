@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/BurntSushi/toml"
-	"github.com/melodysh/melody/resolver"
+	"github.com/mdy/melody/resolver"
 	"io/ioutil"
 	"os"
 	"path/filepath"

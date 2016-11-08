@@ -1,6 +1,6 @@
 package main
 
-import "github.com/melodysh/melody/cli"
+import "github.com/mdy/melody/cli"
 
 // Populated from Makefile
 var version = "<unknown>"
