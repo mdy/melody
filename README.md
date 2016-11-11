@@ -1,8 +1,19 @@
 # Melody - Dependency Manager for Go
 
+[Get started](https://melody.sh/docs/howto) &nbsp;&middot;&nbsp;
+[Install Melody](https://melody.sh/docs/howto/install) &nbsp;&middot;&nbsp;
+[Command reference](https://melody.sh/docs/commands) &nbsp;&middot;&nbsp;
+[Repo cache][melody-api]
+
 [![Version Badge](https://badge.fury.io/mdy/github.com%2Fmdy%2Fmelody.svg)](https://melody.sh/github.com/mdy/melody)
 [![Build Status](https://travis-ci.org/mdy/melody.svg?branch=master)](https://travis-ci.org/mdy/melody)
 [![Go Report Card](https://goreportcard.com/badge/github.com/mdy/melody)](https://goreportcard.com/report/github.com/mdy/melody)
+
+Melody is a dependency manager with a focus on speed and reliability.  In some instances, it is **up to 3x faster** than `go get -d` and other dependency managers.
+
+Sponsored by [Gemfury](https://gemfury.com), Melody has been used for production builds since July 2016.
+
+## About
 
 Melody is a tool that enables Go developers to manage project's dependencies and ensure fast, consistent, and repeatable builds.  We've adopted the [following principles](#credits-and-inspiration) to make this happen:
 
@@ -30,18 +41,7 @@ Melody requires Go 1.6+. Although it may work with GO15VENDOREXPERIMENT flag, Go
 
 ## Contribution and Improvements
 
-We encourage you to contribute to Melody! The current iteration of Melody is just a preview of what it could be.  We would like to add the following in the near future:
-
-- <s>`init` command to initialize a project with a basic `Melody.toml`</s>
-- <s>`lint` command to validate configuration and dependencies</s>
-- <s>`init` should be smarter about creating projects in $GOPATH/src</s>
-- <s>Auto-extract and validate dependencies in `init` and `lint`</s>
-- Skip "Resolving" step for `install` with an existing lockfile.
-- Support for `[test-dependencies]` group in `Melody.toml`
-- Batch GraphQL queries for package info from melodyAPI
-- Better error handling and messaging
-- Clean-up and document public API 
-- More tests
+We encourage you to contribute to Melody! The current iteration of Melody is just a preview of what it could be.  Check [GitHub issues][issues] to see how you can help.
 
 ### Building from source
 
