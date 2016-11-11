@@ -17,7 +17,7 @@ version="0.1.0"
 # will see an error if the root package cannot be imported.
 
 [dependencies]
-"github.com/Sirupsen/logrus"="head"
+"github.com/Sirupsen/logrus"="^0.11.0"
 "github.com/urfave/cli"="^1.0.0"
 "github.com/BurntSushi/toml"="head"
 "github.com/gonum/graph"="head"

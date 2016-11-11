@@ -228,9 +228,9 @@ type bintree struct {
 }
 
 var _bintree = &bintree{nil, map[string]*bintree{
-	"Melody.toml.tt": &bintree{melodyTomlTt, map[string]*bintree{}},
-	"bindata.go":     &bintree{bindataGo, map[string]*bintree{}},
-	"generate.go":    &bintree{generateGo, map[string]*bintree{}},
+	"Melody.toml.tt": {melodyTomlTt, map[string]*bintree{}},
+	"bindata.go":     {bindataGo, map[string]*bintree{}},
+	"generate.go":    {generateGo, map[string]*bintree{}},
 }}
 
 // RestoreAsset restores an asset under the given directory

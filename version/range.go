@@ -85,7 +85,7 @@ func ParseRange(str string, verPar Parser) (Range, error) {
 			// Convert operator into comparator
 			comp, ok := comparators[currentOp]
 			if !ok {
-				return nil, fmt.Errorf("Invalid comparator: ", currentOp)
+				return nil, fmt.Errorf("Invalid comparator: %s", currentOp)
 			}
 
 			// Convert comparator into a Range

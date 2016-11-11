@@ -17,71 +17,71 @@ func TestVersionParse(t *testing.T) {
 	}{
 		// Releasable versions
 		{"1", false, &Version{[]part{
-			part{num: 1, isNum: true},
+			{num: 1, isNum: true},
 		}, []part{}, []part{}}},
 		{"1.2", false, &Version{[]part{
-			part{num: 1, isNum: true},
-			part{num: 2, isNum: true},
+			{num: 1, isNum: true},
+			{num: 2, isNum: true},
 		}, []part{}, []part{}}},
 		{"1.2.3", true, &Version{[]part{
-			part{num: 1, isNum: true},
-			part{num: 2, isNum: true},
-			part{num: 3, isNum: true},
+			{num: 1, isNum: true},
+			{num: 2, isNum: true},
+			{num: 3, isNum: true},
 		}, []part{}, []part{}}},
 		{"1.2.3.4", false, &Version{[]part{
-			part{num: 1, isNum: true},
-			part{num: 2, isNum: true},
-			part{num: 3, isNum: true},
-			part{num: 4, isNum: true},
+			{num: 1, isNum: true},
+			{num: 2, isNum: true},
+			{num: 3, isNum: true},
+			{num: 4, isNum: true},
 		}, []part{}, []part{}}},
 
 		// Beta versions
 		{"1-1", false, &Version{[]part{
-			part{num: 1, isNum: true},
+			{num: 1, isNum: true},
 		}, []part{
-			part{num: 1, isNum: true},
+			{num: 1, isNum: true},
 		}, []part{}}},
 		{"1-beta", false, &Version{[]part{
-			part{num: 1, isNum: true},
+			{num: 1, isNum: true},
 		}, []part{
-			part{str: "beta", isNum: false},
+			{str: "beta", isNum: false},
 		}, []part{}}},
 		{"1-beta1", false, &Version{[]part{
-			part{num: 1, isNum: true},
+			{num: 1, isNum: true},
 		}, []part{
-			part{str: "beta1", isNum: false},
+			{str: "beta1", isNum: false},
 		}, []part{}}},
 		{"1-beta.1", false, &Version{[]part{
-			part{num: 1, isNum: true},
+			{num: 1, isNum: true},
 		}, []part{
-			part{str: "beta", isNum: false},
-			part{num: 1, isNum: true},
+			{str: "beta", isNum: false},
+			{num: 1, isNum: true},
 		}, []part{}}},
 		{"1-beta-rc", false, &Version{[]part{
-			part{num: 1, isNum: true},
+			{num: 1, isNum: true},
 		}, []part{
-			part{str: "beta", isNum: false},
-			part{str: "rc", isNum: false},
+			{str: "beta", isNum: false},
+			{str: "rc", isNum: false},
 		}, []part{}}},
 
 		// Build versions
 		{"1+1", false, &Version{[]part{
-			part{num: 1, isNum: true},
+			{num: 1, isNum: true},
 		}, []part{}, []part{
-			part{num: 1, isNum: true},
+			{num: 1, isNum: true},
 		}}},
 		{"1-beta+hi", false, &Version{[]part{
-			part{num: 1, isNum: true},
+			{num: 1, isNum: true},
 		}, []part{
-			part{str: "beta", isNum: false},
+			{str: "beta", isNum: false},
 		}, []part{
-			part{str: "hi", isNum: false},
+			{str: "hi", isNum: false},
 		}}},
 		{"1+hi.1", false, &Version{[]part{
-			part{num: 1, isNum: true},
+			{num: 1, isNum: true},
 		}, []part{}, []part{
-			part{str: "hi", isNum: false},
-			part{num: 1, isNum: true},
+			{str: "hi", isNum: false},
+			{num: 1, isNum: true},
 		}}},
 	}
 

@@ -48,7 +48,7 @@ func lint(c *cli.Context) error {
 		fmt.Printf("  Name is \"%s\", should be \"%s\"\n", a, e)
 	}
 
-	for d, _ := range initConfig.Dependencies {
+	for d := range initConfig.Dependencies {
 		if _, ok := proj.Config.Dependencies[d]; !ok {
 			fmt.Printf("  Imported package \"%s\" should be a dependency\n", d)
 		}

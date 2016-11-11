@@ -21,7 +21,7 @@ type Version struct {
 func ParseVersion(src string) (Version, error) {
 	s := (&tscanner.Scanner{}).Init(strings.NewReader(src))
 	s.Mode = tscanner.ScanIdents | tscanner.ScanInts
-	parts := [][]part{[]part{}, []part{}, []part{}}
+	parts := [][]part{{}, {}, {}}
 
 	for i := 0; ; {
 		tok, text := s.Scan(), s.TokenText()
