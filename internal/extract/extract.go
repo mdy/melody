@@ -19,7 +19,7 @@ func ProjectConfig(dir string) (*project.Config, error) {
 	config.Name = pkg.ImportPath
 
 	deps, err := extractDependencies(config.Name, dir)
-	if err != err {
+	if err != nil {
 		return config, err
 	}
 
