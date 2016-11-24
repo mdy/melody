@@ -11,6 +11,7 @@ _lockFormatVersion = "0.1.0"
     "github.com/gonum/graph 0.1.0-head.671+m310a92d978bfef671734001aa9ecabf25052afd8",
     "github.com/gonum/graph/simple 0.1.0-head.671+m310a92d978bfef671734001aa9ecabf25052afd8",
     "github.com/pkg/errors 0.8.1-head.2+m248dadf4e9068a0b3e79f02ed0a610d935de5302",
+    "github.com/satori/go.uuid 1.1.1-head.6+mb061729afc07e77a8aa4fad0a2fd840958f1942a",
     "github.com/urfave/cli 1.18.1",
     "golang.org/x/sync/errgroup 0.1.0-head.6+m1ae7c7b29e06598039be46c5083819ba6fd7a97e",
     "gopkg.in/check.v1 0.1.0-head.151+m4f90aeace3a26ad7021961c297b22c42160c7b25"
@@ -155,6 +156,11 @@ _lockFormatVersion = "0.1.0"
   name = "github.com/pkg/errors"
   version = "0.8.1-head.2+m248dadf4e9068a0b3e79f02ed0a610d935de5302"
   release = "github.com/pkg/errors#248dadf4e9068a0b3e79f02ed0a610d935de5302"
+
+[[packages]]
+  name = "github.com/satori/go.uuid"
+  version = "1.1.1-head.6+mb061729afc07e77a8aa4fad0a2fd840958f1942a"
+  release = "github.com/satori/go.uuid#b061729afc07e77a8aa4fad0a2fd840958f1942a"
 
 [[packages]]
   name = "github.com/urfave/cli"

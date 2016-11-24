@@ -9,6 +9,7 @@ import (
 	"github.com/dustin/go-humanize"
 	"github.com/mdy/melody/resolver"
 	"github.com/mdy/melody/resolver/types"
+	"github.com/satori/go.uuid"
 	"golang.org/x/sync/errgroup"
 	"io"
 	"io/ioutil"
@@ -22,13 +23,16 @@ const maxParallelInstalls = 5
 
 type Melody struct {
 	resolver.BaseProvider
-	base  *resolver.Graph
-	cache *Cache
+	sessionID string
+	client    *http.Client
+	base      *resolver.Graph
+	cache     *Cache
 }
 
 func New(base *resolver.Graph) *Melody {
-	source := &Melody{base: base}
+	source := &Melody{base: base, sessionID: uuid.NewV4().String()}
 	source.cache = NewCache(source.fetchAvailableSpecs)
+	source.client = &http.Client{Transport: source}
 	return source
 }
 
@@ -156,7 +160,7 @@ func (p *Melody) installRelease(rootDir string, release *melodyRelease) error {
 		os.RemoveAll(target)
 	}
 
-	resp, err := http.Get(release.URL)
+	resp, err := p.client.Get(release.URL)
 	if err != nil {
 		return err
 	}
@@ -240,6 +244,12 @@ func (p *Melody) fetchAvailableSpecs(name string) ([]types.Specification, error)
 	}
 
 	return p.fetchSpecs(&pQuery)
+}
+
+// Implement http.RoundTripper so we can use our own client
+func (p *Melody) RoundTrip(req *http.Request) (*http.Response, error) {
+	req.Header.Set("X-Melody-Session-ID", p.sessionID)
+	return http.DefaultTransport.RoundTrip(req)
 }
 
 // Read error body returned from Melody server

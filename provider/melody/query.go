@@ -6,7 +6,6 @@ import (
 	"github.com/mdy/melody/resolver/types"
 	"github.com/pkg/errors"
 	"io/ioutil"
-	"net/http"
 	"net/url"
 	"strconv"
 )
@@ -21,7 +20,7 @@ const (
 
 func (p *Melody) fetchSpecs(query *packageQuery) ([]types.Specification, error) {
 	// Populate arguments into query and send it to Melody-API
-	resp, err := http.PostForm(melodyURL, url.Values{"query": {query.GqlString()}})
+	resp, err := p.client.PostForm(melodyURL, url.Values{"query": {query.GqlString()}})
 	if err != nil {
 		return nil, err
 	}
