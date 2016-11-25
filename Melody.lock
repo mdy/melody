@@ -10,6 +10,7 @@ _lockFormatVersion = "0.1.0"
     "github.com/dustin/go-humanize 0.1.0-head.101+mbd88f87ad3a420f7bcf05e90566fd1ceb351fa7f",
     "github.com/gonum/graph 0.1.0-head.671+m310a92d978bfef671734001aa9ecabf25052afd8",
     "github.com/gonum/graph/simple 0.1.0-head.671+m310a92d978bfef671734001aa9ecabf25052afd8",
+    "github.com/influxdata/toml 0.1.0-head.48+mad49a5c2936f96b8f5943c3fdba47630ccf45a0d",
     "github.com/pkg/errors 0.8.1-head.2+m248dadf4e9068a0b3e79f02ed0a610d935de5302",
     "github.com/satori/go.uuid 1.1.1-head.6+mb061729afc07e77a8aa4fad0a2fd840958f1942a",
     "github.com/urfave/cli 1.18.1",
@@ -151,6 +152,25 @@ _lockFormatVersion = "0.1.0"
     "github.com/gonum/lapack/lapack64 0.1.0-head.512+mab9be2d0162b800028a0b89fff1087069f011c8a",
     "github.com/gonum/matrix 0.1.0-head.697+mdbfe3ea464ecb7c5f04b9d1c042185ce9ed9fac1"
   ]
+
+[[packages]]
+  name = "github.com/influxdata/toml"
+  version = "0.1.0-head.48+mad49a5c2936f96b8f5943c3fdba47630ccf45a0d"
+  release = "github.com/influxdata/toml#ad49a5c2936f96b8f5943c3fdba47630ccf45a0d"
+  dependencies = [
+    "github.com/influxdata/toml/ast 0.1.0-head.48+mad49a5c2936f96b8f5943c3fdba47630ccf45a0d",
+    "github.com/naoina/go-stringutil 0.1.0"
+  ]
+
+[[packages]]
+  name = "github.com/influxdata/toml/ast"
+  version = "0.1.0-head.48+mad49a5c2936f96b8f5943c3fdba47630ccf45a0d"
+  release = "github.com/influxdata/toml#ad49a5c2936f96b8f5943c3fdba47630ccf45a0d"
+
+[[packages]]
+  name = "github.com/naoina/go-stringutil"
+  version = "0.1.0"
+  release = "github.com/naoina/go-stringutil#6b638e95a32d0c1131db0e7fe83775cbea4a0d0b"
 
 [[packages]]
   name = "github.com/pkg/errors"

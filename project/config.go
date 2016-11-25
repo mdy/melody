@@ -3,7 +3,6 @@ package project
 import (
 	"bytes"
 	"encoding/json"
-	"fmt"
 	"github.com/BurntSushi/toml"
 	"github.com/mdy/melody/resolver"
 	"io/ioutil"
@@ -18,7 +17,9 @@ const (
 
 type Project struct {
 	// Melody.toml
-	Config Config
+	Config      Config
+	configData  []byte
+	configDirty bool
 
 	// Locked dependencies graph
 	Locked *resolver.Graph
@@ -39,10 +40,29 @@ type Locked struct {
 }
 
 func Load(root string) (*Project, error) {
-	tomlConfig := &tomlRootConfig{}
-	cPath := filepath.Join(root, melodyFile)
-	if err := loadTOMLFile(cPath, tomlConfig); err != nil {
+	raw, err := ioutil.ReadFile(filepath.Join(root, melodyFile))
+	if err != nil {
 		return nil, err
+	}
+
+	project := &Project{root: root, configData: raw}
+	if err := project.parseConfig(); err != nil {
+		return nil, err
+	}
+
+	project.Locked = resolver.NewGraph()
+	err = project.LoadLockfile(filepath.Join(root, lockedFile))
+	if err != nil && !os.IsNotExist(err) {
+		return nil, err
+	}
+
+	return project, nil
+}
+
+func (p *Project) parseConfig() error {
+	tomlConfig := &tomlRootConfig{}
+	if err := toml.Unmarshal(p.configData, tomlConfig); err != nil {
+		return err
 	}
 
 	// LEGACY/DEPRECATED CONFIG
@@ -50,30 +70,16 @@ func Load(root string) (*Project, error) {
 		tomlConfig.Project = *tomlConfig.Package
 	}
 
-	project := &Project{root: root}
-	project.Config = tomlConfig.Project
-	project.Config.Dependencies = tomlConfig.Dependencies
-
-	lPath := filepath.Join(root, lockedFile)
-	if info, err := os.Stat(lPath); os.IsNotExist(err) {
-		return project, nil
-	} else if info.IsDir() {
-		return nil, fmt.Errorf("%s is a directory", lockedFile)
-	} else if err != nil {
-		return nil, err
-	}
-
-	project.Locked = resolver.NewGraph()
-	if err := project.LoadLockfile(lPath); err != nil {
-		return nil, err
-	}
-
-	return project, nil
+	p.Config = tomlConfig.Project
+	p.Config.Dependencies = tomlConfig.Dependencies
+	return nil
 }
 
 func (p *Project) Save() error {
-	lPath := filepath.Join(p.root, lockedFile)
-	return p.SaveLockfile(lPath)
+	if err := p.saveConfig(); err != nil {
+		return err
+	}
+	return p.saveLockfile()
 }
 
 // === DEBUG HELPERS ===

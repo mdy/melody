@@ -77,6 +77,14 @@ var (
 			Usage:     "Show outdated dependencies",
 			Action:    outdated,
 		}, {
+			Name:   "add",
+			Usage:  "Add package to dependencies",
+			Action: addDependency,
+		}, {
+			Name:   "remove",
+			Usage:  "Remove package to dependencies",
+			Action: removeDependency,
+		}, {
 			Name:   "lint",
 			Usage:  "Validate configuration",
 			Action: lint,

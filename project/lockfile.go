@@ -2,10 +2,13 @@ package project
 
 import (
 	"bytes"
+	"fmt"
 	"github.com/BurntSushi/toml"
 	"github.com/mdy/melody/provider/melody"
 	"github.com/mdy/melody/resolver"
 	"io/ioutil"
+	"os"
+	"path/filepath"
 	"regexp"
 	"strings"
 )
@@ -17,13 +20,20 @@ const (
 
 // Marshalling/unmarshalling of JSON testdata
 func (p *Project) LoadLockfile(path string) error {
+	if info, err := os.Stat(path); err != nil {
+		return err
+	} else if info.IsDir() {
+		return fmt.Errorf("%s is a directory", lockedFile)
+	}
+
 	builder := &LockEncoderDecoder{path: path}
 	graph, err := resolver.DecodeGraph(builder)
 	p.Locked = graph
 	return err
 }
 
-func (p *Project) SaveLockfile(path string) error {
+func (p *Project) saveLockfile() error {
+	path := filepath.Join(p.root, lockedFile)
 	encoder := &LockEncoderDecoder{path: path, config: &p.Config}
 	return p.Locked.Encode(encoder)
 }
