@@ -1,7 +1,7 @@
 package cli
 
 import (
-	log "github.com/Sirupsen/logrus"
+	"fmt"
 	"github.com/mdy/melody/project"
 	"github.com/urfave/cli"
 	"os"
@@ -10,7 +10,7 @@ import (
 
 func addDependency(c *cli.Context) error {
 	if len(c.Args()) < 1 {
-		log.Fatalf("`add` command takes one or more packages. See '%s add --help'.", c.App.Name)
+		return fmt.Errorf("`add` command takes one or more packages. See '%s add --help'.", c.App.Name)
 	}
 
 	wDir, _ := os.Getwd()
@@ -31,7 +31,7 @@ func addDependency(c *cli.Context) error {
 
 func removeDependency(c *cli.Context) error {
 	if len(c.Args()) < 1 {
-		log.Fatalf("`remove` command takes one or more packages. See '%s remove --help'.", c.App.Name)
+		return fmt.Errorf("`remove` command takes one or more packages. See '%s remove --help'.", c.App.Name)
 	}
 
 	wDir, _ := os.Getwd()

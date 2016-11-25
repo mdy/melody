@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"fmt"
 	"github.com/BurntSushi/toml"
-	log "github.com/Sirupsen/logrus"
 	"github.com/mdy/melody/internal/extract"
 	"github.com/mdy/melody/templates"
 	"github.com/pkg/errors"
@@ -17,7 +16,7 @@ import (
 
 func initProject(c *cli.Context) error {
 	if len(c.Args()) > 1 {
-		log.Fatalf("`init` command takes at most one argument. See '%s init --help'.", c.App.Name)
+		return fmt.Errorf("`init` command takes at most one argument. See '%s init --help'.", c.App.Name)
 	}
 
 	// No arguments will return a blank path which uses current dir

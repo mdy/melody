@@ -2,7 +2,6 @@ package cli
 
 import (
 	"fmt"
-	log "github.com/Sirupsen/logrus"
 	"github.com/mdy/melody/project"
 	"github.com/mdy/melody/provider"
 	"github.com/mdy/melody/resolver/types"
@@ -17,7 +16,7 @@ type released interface {
 
 func list(c *cli.Context) error {
 	if len(c.Args()) != 0 {
-		log.Fatalf("`list` command takes no arguments. See '%s list --help'.", c.App.Name)
+		return fmt.Errorf("`list` command takes no arguments. See '%s list --help'.", c.App.Name)
 	}
 
 	wDir, _ := os.Getwd()

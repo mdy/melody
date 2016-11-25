@@ -2,10 +2,8 @@ package cli
 
 import (
 	"fmt"
-	log "github.com/Sirupsen/logrus"
 	"github.com/mdy/melody/internal/extract"
 	"github.com/mdy/melody/project"
-	//	"github.com/pkg/errors"
 	"github.com/urfave/cli"
 	"go/build"
 	"os"
@@ -15,7 +13,7 @@ import (
 
 func lint(c *cli.Context) error {
 	if len(c.Args()) > 1 {
-		log.Fatalf("`lint` command takes at most one argument. See '%s lint --help'.", c.App.Name)
+		return fmt.Errorf("`lint` command takes at most one argument. See '%s lint --help'.", c.App.Name)
 	}
 
 	// No arguments will return a blank path which becomes current working dir

@@ -1,6 +1,7 @@
 package cli
 
 import (
+	"fmt"
 	log "github.com/Sirupsen/logrus"
 	"github.com/mdy/melody/project"
 	"github.com/mdy/melody/provider"
@@ -10,7 +11,7 @@ import (
 
 func install(c *cli.Context) error {
 	if len(c.Args()) != 0 {
-		log.Fatalf("`install` command takes no arguments. See '%s install --help'.", c.App.Name)
+		return fmt.Errorf("`install` command takes no arguments. See '%s install --help'.", c.App.Name)
 	}
 
 	wDir, _ := os.Getwd()

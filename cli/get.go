@@ -17,7 +17,7 @@ import (
 
 func getPackages(c *cli.Context) error {
 	if len(c.Args()) < 1 {
-		log.Fatalf("`get` command takes one or more packages. See '%s get --help'.", c.App.Name)
+		return fmt.Errorf("`get` command takes one or more packages. See '%s get --help'.", c.App.Name)
 	}
 
 	shouldUpdate := c.Bool("u")
