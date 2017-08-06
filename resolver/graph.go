@@ -46,8 +46,15 @@ func (g *Graph) Dup() *Graph {
 	return newGraph
 }
 
-func (g *Graph) DetachVertexNamed(name string) {
-	g.detachVertexNamed(name)
+// Detatches a vertex and all vertexes depending on it.
+// Used to detach a Release and all of its packages
+func (g *Graph) DetachVertexAndParents(name string) {
+	if id, ok := g.namesToID[name]; ok {
+		for _, node := range g.To(g.Node(id)) {
+			name := node.(*Vertex).Name
+			g.detachVertexNamed(name)
+		}
+	}
 }
 
 func (g *Graph) detachVertexNamed(name string) {

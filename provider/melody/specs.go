@@ -22,8 +22,8 @@ func (b *Builder) NewSpec(i *resolver.GraphItem) (types.Specification, error) {
 
 	if j := strings.Index(i.Release, "#"); j >= 0 {
 		name, rev := i.Release[0:j], i.Release[j+1:]
+		releaseSpec := flex.NewSpec(name, i.Version)
 		url := fmt.Sprintf(melodyReleaseURL, name, rev)
-		releaseSpec := flex.NewSpec("repo://"+name, i.Version)
 		spec.Release = &melodyRelease{*releaseSpec, rev, url}
 	}
 

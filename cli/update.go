@@ -27,10 +27,16 @@ func update(c *cli.Context) error {
 		if err != nil {
 			return err
 		}
+
 		baseGraph = project.Locked.Dup()
 		for _, spec := range project.Locked.Specifications() {
-			if name := spec.Name(); g.Match(name) {
-				baseGraph.DetachVertexNamed(name)
+			specName := spec.Name()
+			if !strings.HasPrefix(specName, "repo://") {
+				continue
+			}
+			// Detach named release (and its packages)
+			if g.Match(strings.TrimPrefix(specName, "repo://")) {
+				baseGraph.DetachVertexAndParents(specName)
 			}
 		}
 	}
