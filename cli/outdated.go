@@ -1,11 +1,12 @@
 package cli
 
 import (
-	"fmt"
 	log "github.com/Sirupsen/logrus"
 	"github.com/mdy/melody/project"
 	"github.com/mdy/melody/provider"
 	"github.com/urfave/cli"
+
+	"fmt"
 	"os"
 	"strings"
 )
@@ -27,35 +28,50 @@ func outdated(c *cli.Context) error {
 		}
 	}
 
+	fmt.Printf("♫ Resolving ...")
+
 	// Check for new versions of all current specification
-	hasOutdated := false
+	outdated := map[string]outdatedRelease{}
 	for _, oldSpec := range project.Locked.Specifications() {
 		if strings.HasPrefix(oldSpec.Name(), "repo://") {
 			continue
 		}
 
+		fmt.Printf(".")
 		req := source.NewRequirement(oldSpec.Name(), "> "+oldSpec.Version())
 		specs := source.SearchFor(req)
 		if len(specs) == 0 {
 			continue
 		}
 
-		if !hasOutdated {
-			fmt.Println("♫ Outdated packages in the project:")
-			hasOutdated = true
+		if pkg, isPkg := specs[len(specs)-1].(released); isPkg {
+			release := pkg.ReleaseSpec()
+			outdated[release.Name()] = outdatedRelease{
+				Name:       strings.TrimPrefix(release.Name(), "repo://"),
+				OldVersion: oldSpec.Version(),
+				NewVersion: release.Version(),
+			}
 		}
+	}
+	fmt.Printf(" done.\n")
 
-		newSpec := specs[len(specs)-1]
+	if len(outdated) == 0 {
+		fmt.Println("♫ All packages are up to date!")
+		return nil
+	}
+
+	fmt.Println("♫ Outdated repos in the project:")
+	for _, or := range outdated {
 		fmt.Printf("  * %s (newest %s, installed %s)\n",
-			oldSpec.Name(),
-			newSpec.Version(),
-			oldSpec.Version(),
+			or.Name, or.NewVersion, or.OldVersion,
 		)
 	}
 
-	if !hasOutdated {
-		fmt.Println("♫ All packages are up to date!")
-	}
-
 	return nil
+}
+
+type outdatedRelease struct {
+	Name       string
+	NewVersion string
+	OldVersion string
 }
