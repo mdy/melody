@@ -4,15 +4,9 @@ import (
 	"fmt"
 	"github.com/mdy/melody/project"
 	"github.com/mdy/melody/provider"
-	"github.com/mdy/melody/resolver/types"
 	"github.com/urfave/cli"
 	"os"
 )
-
-// TODO: This should be a supported concept at resolver level
-type released interface {
-	ReleaseSpec() types.Specification
-}
 
 func list(c *cli.Context) error {
 	if len(c.Args()) != 0 {
@@ -27,7 +21,7 @@ func list(c *cli.Context) error {
 
 	// Resolve if not locked
 	if project.Locked == nil {
-		source := provider.NewMelody(nil)
+		source := project.Provider()
 		project.Locked, err = project.Resolve(source, nil)
 		if err != nil {
 			return err
@@ -42,7 +36,7 @@ func list(c *cli.Context) error {
 
 	fmt.Println("♫ Dependencies for this project:")
 	for _, s := range specs {
-		if _, isPkg := s.(released); isPkg {
+		if _, isPkg := s.(provider.VersionSpec); isPkg {
 			fmt.Printf("  - %s\n", s.Name())
 		}
 	}

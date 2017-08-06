@@ -1,11 +1,14 @@
 package melody
 
 import (
-	"encoding/json"
-	"fmt"
+	"github.com/mdy/melody/provider"
 	"github.com/mdy/melody/resolver"
 	"github.com/mdy/melody/resolver/flex"
 	"github.com/mdy/melody/resolver/types"
+
+	"encoding/json"
+	"fmt"
+	"path/filepath"
 	"strings"
 )
 
@@ -48,7 +51,7 @@ func (ms *melodySpec) Revision() string {
 }
 
 // Implement resolver.Released interface
-func (ms *melodySpec) ReleaseSpec() types.Specification {
+func (ms *melodySpec) ReleaseSpec() provider.ReleaseSpec {
 	return ms.Release
 }
 
@@ -63,6 +66,17 @@ type melodyRelease struct {
 // Unique name from a corresponding package
 func (r *melodyRelease) Name() string {
 	return "repo://" + r.NameStr
+}
+
+// Name displayed and queried by user via UI, as well
+// as the name written to project (Melody.*) files
+func (r *melodyRelease) ExternalName() string {
+	return r.NameStr
+}
+
+// Subdirectory to for installation into project
+func (r *melodyRelease) InstallPath() string {
+	return filepath.Clean(r.NameStr)
 }
 
 // Releases are always leafs -- just to be sure

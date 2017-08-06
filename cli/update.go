@@ -7,6 +7,7 @@ import (
 	"github.com/mdy/melody/provider"
 	"github.com/mdy/melody/resolver"
 	"github.com/urfave/cli"
+
 	"os"
 	"strings"
 )
@@ -30,18 +31,14 @@ func update(c *cli.Context) error {
 
 		baseGraph = project.Locked.Dup()
 		for _, spec := range project.Locked.Specifications() {
-			specName := spec.Name()
-			if !strings.HasPrefix(specName, "repo://") {
-				continue
-			}
-			// Detach named release (and its packages)
-			if g.Match(strings.TrimPrefix(specName, "repo://")) {
-				baseGraph.DetachVertexAndParents(specName)
+			if vs, ok := spec.(provider.VersionSpec); ok {
+				if rs := vs.ReleaseSpec(); g.Match(rs.ExternalName()) {
+					baseGraph.DetachNamedVertex(spec.Name())
+				}
 			}
 		}
 	}
 
 	// Convert Project.Config to Requested
-	source := provider.NewMelody(project.Locked)
-	return project.UpdateWithBase(source, baseGraph)
+	return project.UpdateWithBase(project.Provider(), baseGraph)
 }

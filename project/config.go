@@ -1,10 +1,13 @@
 package project
 
 import (
+	"github.com/BurntSushi/toml"
+	"github.com/mdy/melody/provider"
+	"github.com/mdy/melody/provider/melody"
+	"github.com/mdy/melody/resolver"
+
 	"bytes"
 	"encoding/json"
-	"github.com/BurntSushi/toml"
-	"github.com/mdy/melody/resolver"
 	"io/ioutil"
 	"os"
 	"path/filepath"
@@ -57,6 +60,11 @@ func Load(root string) (*Project, error) {
 	}
 
 	return project, nil
+}
+
+// Initialize Specification provider for this project
+func (p *Project) Provider() provider.Provider {
+	return melody.New(p.Locked)
 }
 
 func (p *Project) parseConfig() error {

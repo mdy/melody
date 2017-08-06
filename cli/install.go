@@ -1,11 +1,11 @@
 package cli
 
 import (
-	"fmt"
 	log "github.com/Sirupsen/logrus"
 	"github.com/mdy/melody/project"
-	"github.com/mdy/melody/provider"
 	"github.com/urfave/cli"
+
+	"fmt"
 	"os"
 )
 
@@ -35,6 +35,5 @@ func runInstall(dir string, mutate func(*project.Project) error) error {
 	}
 
 	// Convert Project.Config to Requested
-	source := provider.NewMelody(project.Locked)
-	return project.UpdateWithBase(source, project.Locked)
+	return project.UpdateWithBase(project.Provider(), project.Locked)
 }

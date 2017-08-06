@@ -8,7 +8,6 @@ import (
 
 	"fmt"
 	"os"
-	"strings"
 )
 
 func outdated(c *cli.Context) error {
@@ -20,7 +19,7 @@ func outdated(c *cli.Context) error {
 	}
 
 	// Load or resolve current specs
-	source := provider.NewMelody(project.Locked)
+	source := project.Provider()
 	if project.Locked == nil {
 		project.Locked, err = project.Resolve(source, nil)
 		if err != nil {
@@ -33,7 +32,7 @@ func outdated(c *cli.Context) error {
 	// Check for new versions of all current specification
 	outdated := map[string]outdatedRelease{}
 	for _, oldSpec := range project.Locked.Specifications() {
-		if strings.HasPrefix(oldSpec.Name(), "repo://") {
+		if _, ok := oldSpec.(provider.ReleaseSpec); ok {
 			continue
 		}
 
@@ -44,10 +43,10 @@ func outdated(c *cli.Context) error {
 			continue
 		}
 
-		if pkg, isPkg := specs[len(specs)-1].(released); isPkg {
-			release := pkg.ReleaseSpec()
+		if ver, isVer := specs[len(specs)-1].(provider.VersionSpec); isVer {
+			release := ver.ReleaseSpec()
 			outdated[release.Name()] = outdatedRelease{
-				Name:       strings.TrimPrefix(release.Name(), "repo://"),
+				Name:       release.ExternalName(),
 				OldVersion: oldSpec.Version(),
 				NewVersion: release.Version(),
 			}
@@ -60,7 +59,7 @@ func outdated(c *cli.Context) error {
 		return nil
 	}
 
-	fmt.Println("♫ Outdated repos in the project:")
+	fmt.Println("♫ Outdated repositories in the project:")
 	for _, or := range outdated {
 		fmt.Printf("  * %s (newest %s, installed %s)\n",
 			or.Name, or.NewVersion, or.OldVersion,

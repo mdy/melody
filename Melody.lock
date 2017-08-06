@@ -143,7 +143,7 @@ _lockFormatVersion = "0.1.0"
   version = "0.1.0-head.681+m1ee3caba44244c8cf869cbec9a0079f8a1f2b1c0"
   release = "github.com/gonum/graph#1ee3caba44244c8cf869cbec9a0079f8a1f2b1c0"
   dependencies = [
-    "golang.org/x/tools/container/intsets 0.1.0-head.2244+ma237aba5f578100f4f8419bbda73189b8e6dbae5"
+    "golang.org/x/tools/container/intsets 0.1.0-head.2246+mf03b3350b7d6cb09e4221e7f2ecffaf41f89fce1"
   ]
 
 [[packages]]
@@ -162,7 +162,7 @@ _lockFormatVersion = "0.1.0"
     "github.com/gonum/graph 0.1.0-head.681+m1ee3caba44244c8cf869cbec9a0079f8a1f2b1c0",
     "github.com/gonum/graph/internal/ordered 0.1.0-head.681+m1ee3caba44244c8cf869cbec9a0079f8a1f2b1c0",
     "github.com/gonum/matrix/mat64 0.1.0-head.731+mdd6034299e4242c9f0ea36735e6d4264dfcb3f9f",
-    "golang.org/x/tools/container/intsets 0.1.0-head.2244+ma237aba5f578100f4f8419bbda73189b8e6dbae5"
+    "golang.org/x/tools/container/intsets 0.1.0-head.2246+mf03b3350b7d6cb09e4221e7f2ecffaf41f89fce1"
   ]
 
 [[packages]]
@@ -262,15 +262,15 @@ _lockFormatVersion = "0.1.0"
 
 [[packages]]
   name = "golang.org/x/net/context"
-  version = "0.1.0-head.1199+mf5079bd7f6f74e23c4d65efa0f4ce14cbd6a3c0f"
-  release = "golang.org/x/net#f5079bd7f6f74e23c4d65efa0f4ce14cbd6a3c0f"
+  version = "0.1.0-head.1201+m090ebbdfc2aff44cc6674372b72e02e731f7f0ef"
+  release = "golang.org/x/net#090ebbdfc2aff44cc6674372b72e02e731f7f0ef"
 
 [[packages]]
   name = "golang.org/x/sync/errgroup"
   version = "0.1.0-head.17+mf52d1811a62927559de87708c8913c1650ce4f26"
   release = "golang.org/x/sync#f52d1811a62927559de87708c8913c1650ce4f26"
   dependencies = [
-    "golang.org/x/net/context 0.1.0-head.1199+mf5079bd7f6f74e23c4d65efa0f4ce14cbd6a3c0f"
+    "golang.org/x/net/context 0.1.0-head.1201+m090ebbdfc2aff44cc6674372b72e02e731f7f0ef"
   ]
 
 [[packages]]
@@ -280,8 +280,8 @@ _lockFormatVersion = "0.1.0"
 
 [[packages]]
   name = "golang.org/x/tools/container/intsets"
-  version = "0.1.0-head.2244+ma237aba5f578100f4f8419bbda73189b8e6dbae5"
-  release = "golang.org/x/tools#a237aba5f578100f4f8419bbda73189b8e6dbae5"
+  version = "0.1.0-head.2246+mf03b3350b7d6cb09e4221e7f2ecffaf41f89fce1"
+  release = "golang.org/x/tools#f03b3350b7d6cb09e4221e7f2ecffaf41f89fce1"
 
 [[packages]]
   name = "gopkg.in/check.v1"

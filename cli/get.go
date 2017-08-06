@@ -1,12 +1,13 @@
 package cli
 
 import (
-	"fmt"
 	log "github.com/Sirupsen/logrus"
 	"github.com/mdy/melody/project"
 	"github.com/mdy/melody/provider"
 	"github.com/mdy/melody/resolver/types"
 	"github.com/urfave/cli"
+
+	"fmt"
 	"go/build"
 	"os"
 	"os/exec"
@@ -34,7 +35,7 @@ func getPackages(c *cli.Context) error {
 		return fmt.Errorf("Please set your GOPATH")
 	}
 
-	source := provider.NewMelody(nil)
+	source := (&project.Project{}).Provider()
 	for _, pkgName := range c.Args() {
 		specs := source.SearchFor(source.NewRequirement(pkgName, "head"))
 		if len(specs) == 0 {
@@ -42,17 +43,15 @@ func getPackages(c *cli.Context) error {
 		}
 
 		// Specs are ordered by version
-		relSpec, ok := specs[len(specs)-1].(released)
+		verSpec, ok := specs[len(specs)-1].(provider.VersionSpec)
 		if !ok {
 			return fmt.Errorf("Internal error. Unreleaseable spec.")
 		}
 
-		spec := relSpec.ReleaseSpec()
-		// TODO: This should not assume it's a *melodyRelease
-		installPath := strings.TrimPrefix(spec.Name(), "repo://")
-		installPath = filepath.Join(goPathSrc, installPath)
+		spec := verSpec.ReleaseSpec()
 
 		// Check presence of directory and if it's a Melody install
+		installPath := filepath.Join(goPathSrc, spec.InstallPath())
 		if iStat, err := os.Stat(installPath); os.IsNotExist(err) {
 			shouldUpdate = true // Force update if missing
 		} else if iStat.IsDir() {
@@ -91,7 +90,7 @@ func getPackages(c *cli.Context) error {
 		}
 
 		// Install locked or update dependencies
-		source = provider.NewMelody(project.Locked)
+		source = project.Provider()
 		if err := project.UpdateWithBase(source, project.Locked); err != nil {
 			return err
 		}
