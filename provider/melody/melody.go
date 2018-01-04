@@ -30,7 +30,7 @@ type Melody struct {
 }
 
 func New(base *resolver.Graph) *Melody {
-	source := &Melody{base: base, sessionID: uuid.NewV4().String()}
+	source := &Melody{base: base, sessionID: uuid.Must(uuid.NewV4()).String()}
 	source.cache = NewCache(source.fetchAvailableSpecs)
 	source.client = &http.Client{Transport: source}
 	return source

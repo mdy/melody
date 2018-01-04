@@ -6,16 +6,16 @@ _lockFormatVersion = "0.1.0"
   version = "0.1.0"
   dependencies = [
     "github.com/BurntSushi/toml 0.3.0",
-    "github.com/Sirupsen/logrus 1.0.2",
-    "github.com/dustin/go-humanize 0.1.0-head.106+m259d2a102b871d17f30e3cd9881a642961a1e486",
+    "github.com/Sirupsen/logrus 1.0.4",
+    "github.com/dustin/go-humanize 0.1.0-head.112+mbb3d318650d48840a39aa21a027c6630e198e626",
     "github.com/gobwas/glob 0.2.2",
     "github.com/gonum/graph 0.1.0-head.681+m1ee3caba44244c8cf869cbec9a0079f8a1f2b1c0",
     "github.com/gonum/graph/simple 0.1.0-head.681+m1ee3caba44244c8cf869cbec9a0079f8a1f2b1c0",
     "github.com/influxdata/toml 0.1.0-head.49+m5d1d907f22ead1cd47adde17ceec5bda9cacaf8f",
     "github.com/pkg/errors 0.8.0",
-    "github.com/satori/go.uuid 1.1.0",
-    "github.com/urfave/cli 1.19.1",
-    "golang.org/x/sync/errgroup 0.1.0-head.17+mf52d1811a62927559de87708c8913c1650ce4f26",
+    "github.com/satori/go.uuid 1.1.1-head.31+m36e9d2ebbde5e3f13ab2e25625fd453271d6522e",
+    "github.com/urfave/cli 1.20.0",
+    "golang.org/x/sync/errgroup 0.1.0-head.19+mfd80eb99c8f653c847d294a001bdf2a3a6f768f5",
     "gopkg.in/check.v1 0.1.0-head.154+m20d25e2804050c1cd24a7eea1e7a6447dd0e74ec"
   ]
 
@@ -26,16 +26,17 @@ _lockFormatVersion = "0.1.0"
 
 [[packages]]
   name = "github.com/Sirupsen/logrus"
-  version = "1.0.2"
-  release = "github.com/Sirupsen/logrus#a3f95b5c423586578a4e099b11a46c2479628cac"
+  version = "1.0.4"
+  release = "github.com/Sirupsen/logrus#d682213848ed68c0a260ca37d6dd5ace8423f5ba"
   dependencies = [
-    "golang.org/x/sys/unix 0.1.0-head.252+md8f5ea21b9295e315e612b4bcf4bedea93454d4d"
+    "golang.org/x/crypto/ssh/terminal 0.1.0-head.623+m0fcca4842a8d74bfddc2c96a073bd2a4d2a7a2e8",
+    "golang.org/x/sys/unix 0.1.0-head.358+m28a7276518d399b9634904daad79e18b44d481bc"
   ]
 
 [[packages]]
   name = "github.com/dustin/go-humanize"
-  version = "0.1.0-head.106+m259d2a102b871d17f30e3cd9881a642961a1e486"
-  release = "github.com/dustin/go-humanize#259d2a102b871d17f30e3cd9881a642961a1e486"
+  version = "0.1.0-head.112+mbb3d318650d48840a39aa21a027c6630e198e626"
+  release = "github.com/dustin/go-humanize#bb3d318650d48840a39aa21a027c6630e198e626"
 
 [[packages]]
   name = "github.com/gobwas/glob"
@@ -143,7 +144,7 @@ _lockFormatVersion = "0.1.0"
   version = "0.1.0-head.681+m1ee3caba44244c8cf869cbec9a0079f8a1f2b1c0"
   release = "github.com/gonum/graph#1ee3caba44244c8cf869cbec9a0079f8a1f2b1c0"
   dependencies = [
-    "golang.org/x/tools/container/intsets 0.1.0-head.2246+mf03b3350b7d6cb09e4221e7f2ecffaf41f89fce1"
+    "golang.org/x/tools/container/intsets 0.1.0-head.2293+m894cde2672a2fb65ca40a8fbdce343f755975005"
   ]
 
 [[packages]]
@@ -162,7 +163,7 @@ _lockFormatVersion = "0.1.0"
     "github.com/gonum/graph 0.1.0-head.681+m1ee3caba44244c8cf869cbec9a0079f8a1f2b1c0",
     "github.com/gonum/graph/internal/ordered 0.1.0-head.681+m1ee3caba44244c8cf869cbec9a0079f8a1f2b1c0",
     "github.com/gonum/matrix/mat64 0.1.0-head.731+mdd6034299e4242c9f0ea36735e6d4264dfcb3f9f",
-    "golang.org/x/tools/container/intsets 0.1.0-head.2246+mf03b3350b7d6cb09e4221e7f2ecffaf41f89fce1"
+    "golang.org/x/tools/container/intsets 0.1.0-head.2293+m894cde2672a2fb65ca40a8fbdce343f755975005"
   ]
 
 [[packages]]
@@ -252,36 +253,50 @@ _lockFormatVersion = "0.1.0"
 
 [[packages]]
   name = "github.com/satori/go.uuid"
-  version = "1.1.0"
-  release = "github.com/satori/go.uuid#879c5887cd475cd7864858769793b2ceb0d44feb"
+  version = "1.1.1-head.31+m36e9d2ebbde5e3f13ab2e25625fd453271d6522e"
+  release = "github.com/satori/go.uuid#36e9d2ebbde5e3f13ab2e25625fd453271d6522e"
 
 [[packages]]
   name = "github.com/urfave/cli"
-  version = "1.19.1"
-  release = "github.com/urfave/cli#0bdeddeeb0f650497d603c4ad7b20cfe685682f6"
+  version = "1.20.0"
+  release = "github.com/urfave/cli#cfb38830724cc34fedffe9a2a29fb54fa9169cd1"
+
+[[packages]]
+  name = "golang.org/x/crypto/ssh/terminal"
+  version = "0.1.0-head.623+m0fcca4842a8d74bfddc2c96a073bd2a4d2a7a2e8"
+  release = "golang.org/x/crypto#0fcca4842a8d74bfddc2c96a073bd2a4d2a7a2e8"
+  dependencies = [
+    "golang.org/x/sys/unix 0.1.0-head.358+m28a7276518d399b9634904daad79e18b44d481bc",
+    "golang.org/x/sys/windows 0.1.0-head.358+m28a7276518d399b9634904daad79e18b44d481bc"
+  ]
 
 [[packages]]
   name = "golang.org/x/net/context"
-  version = "0.1.0-head.1201+m090ebbdfc2aff44cc6674372b72e02e731f7f0ef"
-  release = "golang.org/x/net#090ebbdfc2aff44cc6674372b72e02e731f7f0ef"
+  version = "0.1.0-head.1248+md866cfc389cec985d6fda2859936a575a55a3ab6"
+  release = "golang.org/x/net#d866cfc389cec985d6fda2859936a575a55a3ab6"
 
 [[packages]]
   name = "golang.org/x/sync/errgroup"
-  version = "0.1.0-head.17+mf52d1811a62927559de87708c8913c1650ce4f26"
-  release = "golang.org/x/sync#f52d1811a62927559de87708c8913c1650ce4f26"
+  version = "0.1.0-head.19+mfd80eb99c8f653c847d294a001bdf2a3a6f768f5"
+  release = "golang.org/x/sync#fd80eb99c8f653c847d294a001bdf2a3a6f768f5"
   dependencies = [
-    "golang.org/x/net/context 0.1.0-head.1201+m090ebbdfc2aff44cc6674372b72e02e731f7f0ef"
+    "golang.org/x/net/context 0.1.0-head.1248+md866cfc389cec985d6fda2859936a575a55a3ab6"
   ]
 
 [[packages]]
   name = "golang.org/x/sys/unix"
-  version = "0.1.0-head.252+md8f5ea21b9295e315e612b4bcf4bedea93454d4d"
-  release = "golang.org/x/sys#d8f5ea21b9295e315e612b4bcf4bedea93454d4d"
+  version = "0.1.0-head.358+m28a7276518d399b9634904daad79e18b44d481bc"
+  release = "golang.org/x/sys#28a7276518d399b9634904daad79e18b44d481bc"
+
+[[packages]]
+  name = "golang.org/x/sys/windows"
+  version = "0.1.0-head.358+m28a7276518d399b9634904daad79e18b44d481bc"
+  release = "golang.org/x/sys#28a7276518d399b9634904daad79e18b44d481bc"
 
 [[packages]]
   name = "golang.org/x/tools/container/intsets"
-  version = "0.1.0-head.2246+mf03b3350b7d6cb09e4221e7f2ecffaf41f89fce1"
-  release = "golang.org/x/tools#f03b3350b7d6cb09e4221e7f2ecffaf41f89fce1"
+  version = "0.1.0-head.2293+m894cde2672a2fb65ca40a8fbdce343f755975005"
+  release = "golang.org/x/tools#894cde2672a2fb65ca40a8fbdce343f755975005"
 
 [[packages]]
   name = "gopkg.in/check.v1"
