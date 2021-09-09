@@ -1,11 +1,11 @@
 package cli
 
 import (
-	log "github.com/Sirupsen/logrus"
 	"github.com/gobwas/glob"
 	"github.com/mdy/melody/project"
 	"github.com/mdy/melody/provider"
 	"github.com/mdy/melody/resolver"
+	log "github.com/sirupsen/logrus"
 	"github.com/urfave/cli"
 
 	"os"

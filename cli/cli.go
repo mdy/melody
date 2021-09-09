@@ -2,7 +2,7 @@ package cli
 
 import (
 	"fmt"
-	log "github.com/Sirupsen/logrus"
+	log "github.com/sirupsen/logrus"
 	"github.com/urfave/cli"
 	"os"
 	"path"

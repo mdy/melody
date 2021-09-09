@@ -1,10 +1,10 @@
 package project
 
 import (
-	log "github.com/Sirupsen/logrus"
 	"github.com/mdy/melody/provider"
 	"github.com/mdy/melody/resolver"
 	"github.com/mdy/melody/resolver/types"
+	log "github.com/sirupsen/logrus"
 	"os"
 	"path/filepath"
 )

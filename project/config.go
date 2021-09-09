@@ -117,7 +117,14 @@ func loadTOMLFile(path string, data interface{}) error {
 type tomlRootConfig struct {
 	Project      Config
 	Dependencies map[string]string
+	Overrides    []tomlOverrideConfig
 
 	// DEPRECATED: Use Project
 	Package *Config
+}
+
+// Overrides allow fine-grained dependency control
+type tomlOverrideConfig struct {
+	Name   string
+	Source string
 }

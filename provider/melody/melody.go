@@ -5,11 +5,11 @@ import (
 	"compress/gzip"
 	"encoding/json"
 	"fmt"
-	log "github.com/Sirupsen/logrus"
 	"github.com/dustin/go-humanize"
 	"github.com/mdy/melody/resolver"
 	"github.com/mdy/melody/resolver/types"
 	"github.com/satori/go.uuid"
+	log "github.com/sirupsen/logrus"
 	"golang.org/x/sync/errgroup"
 	"io"
 	"io/ioutil"
@@ -30,7 +30,7 @@ type Melody struct {
 }
 
 func New(base *resolver.Graph) *Melody {
-	source := &Melody{base: base, sessionID: uuid.Must(uuid.NewV4()).String()}
+	source := &Melody{base: base, sessionID: uuid.NewV4().String()}
 	source.cache = NewCache(source.fetchAvailableSpecs)
 	source.client = &http.Client{Transport: source}
 	return source
@@ -143,7 +143,7 @@ func (p *Melody) installRelease(rootDir string, release *melodyRelease) error {
 		return fmt.Errorf("No download URL for %s", relName)
 	}
 
-	target := filepath.Join(rootDir, relName)
+	target := filepath.Join(rootDir, release.InstallPath())
 	relDesc := relName + " " + release.Version()
 	log.Info("----> RELEASE: ", relName, " to ", target)
 

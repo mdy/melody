@@ -1,8 +1,8 @@
 package cli
 
 import (
-	log "github.com/Sirupsen/logrus"
 	"github.com/mdy/melody/project"
+	log "github.com/sirupsen/logrus"
 	"github.com/urfave/cli"
 
 	"fmt"
